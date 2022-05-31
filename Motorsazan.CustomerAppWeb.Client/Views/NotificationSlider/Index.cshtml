@@ -1,0 +1,87 @@
+﻿@{
+    ViewBag.Title = "مدیریت محصولات";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head
+{
+    <link href="~/DX.ashx?cssfile=~/Views/NotificationSlider/Css/Index.min.css" rel="Stylesheet" />
+}
+@section scripts
+{
+    <script src="~/DX.ashx?jsfile=~/Views/NotificationSlider/JS/Index.js"></script>
+    <script src="~/DX.ashx?jsfile=~/Client/Src/Js/Views/Shared/components/_Uploader.js"></script>
+    <script src="~/DX.ashx?jsfile=~/Client/Src/Js/Dependencies/Bootstrap/_Bootstrap.js"></script>
+    
+    @*<script>  
+        $(document).ready(function(){  
+            $('#editeBtn').click(function () {
+  
+                // Checking whether FormData is available in browser  
+                if (window.FormData !== undefined) {  
+  
+                    var fileUpload = $("#imgUp").get(0);
+                    var files = fileUpload.files;  
+              
+                    // Create FormData object  
+                    var fileData = new FormData();  
+  
+                    // Looping over all files and add it to FormData object  
+                    for (var i = 0; i < files.length; i++) {  
+                        fileData.append(files[i].name, files[i]);  
+                    }  
+              
+                    // Adding one more key to FormData object  
+                    fileData.append('notificationSliderId', state.notificationSliderId);
+                    fileData.append('Topic', dom.addFormTopicTextBox.GetValue());
+                    fileData.append('NewsText', dom.addFormNewsTextTextBox.GetValue());
+                    fileData.append('PersianShowDateTime', dom.addFormPeriodStartDatePicker.val());
+                    fileData.append('PersianEndShowDateTime', dom.addFormPeriodEndDatePicker.val());
+                    fileData.append('oldImageName', state.oldImageName);
+  
+            $.ajax({  
+                url: '/Home/UploadFiles',  
+                type: "POST",  
+                contentType: false, // Not to set any content header  
+                processData: false, // Not to process data  
+                data: fileData,  
+                success: function (result) {  
+                    alert(result);  
+                },  
+                error: function (err) {  
+                    alert(err.statusText);  
+                }  
+            });  
+        } else {  
+            alert("FormData is not supported.");  
+        }  
+        });  
+        });  
+    </script>*@
+}
+
+<div class="row">
+    <div class="col-xs-12 col-md-3">
+        <section class="app__section">
+            <div class="app__section__header">
+                ثبت  اعلان جدید
+            </div>
+            <div class="app__section__body">
+                @{ Html.RenderPartial("~/Views/NotificationSlider/AddForm/AddForm.cshtml"); }
+            </div>
+        </section>
+    </div>
+    <div class="col-xs-12 col-md-9">
+        <section class="app__section">
+            <div class="app__section__header">
+                لیست
+                @{ Html.RenderPartial("~/Views/Shared/Partials/_AppSectionSettings.cshtml"); }
+            </div>
+            <div class="app__section__body">
+                @{ Html.RenderPartial("~/Views/NotificationSlider/FilterForm/FilterForm.cshtml"); }
+                <form class="app__grid-wrapper" id="gridParent">
+                    @{Html.RenderAction("NotificationSliderGrid", "NotificationSlider");}
+                </form>
+            </div>
+        </section>
+    </div>
+</div>

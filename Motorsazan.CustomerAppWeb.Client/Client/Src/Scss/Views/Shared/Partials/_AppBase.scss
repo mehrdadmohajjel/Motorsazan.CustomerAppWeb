@@ -1,0 +1,283 @@
+﻿* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    background-color: $color-white--dark;
+    color: $color-text;
+    direction: rtl;
+    font-family: $font-family--primary;
+    font-size: $font-size-base;
+    line-height: 1.9;
+    margin: 0;
+    min-height: 100%;
+    min-height: 100vh;
+    padding: 0;
+    position: relative;
+    width: 100%;
+}
+
+body {
+    overflow-x: hidden;
+
+    
+}
+.body--locked {
+    height: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+
+.app {
+
+    @include bem-e("page-title") {
+        color: $color-text--light;
+        font-size: 20px;
+        font-weight: normal;
+        margin: 0 auto;
+        padding: $padding-default 0 $padding-default * 2 0;
+    }
+
+    @include bem-e("pages-wrapper") {
+        min-height: 100vh;
+        padding: em($navigation-height + $padding-default) em($padding-default);
+        position: relative;
+        overflow-x: auto;
+
+        @include mq("sd") {
+            padding-bottom: 0;
+            padding-right: em($shortcut-bar-min-width + $padding-default*2);
+            padding-left: $padding-default*2;
+        }
+    }
+
+    @include bem-e("forms-wrapper") {
+        @include bem-m("mini") {
+            margin: 0 auto;
+            max-width: 960px;
+        }
+    }
+
+    @include bem-e("hide") {
+        display: none !important;
+    }
+
+    @include bem-e("disable") {
+        background: #cfcfcf !important;
+        color: #676464 !important;
+        cursor: default !important;
+    }
+
+    @include bem-m("center") {
+        text-align: center;
+    }
+
+    @include bem-m("right") {
+        text-align: right;
+    }
+
+    @include bem-m("left") {
+        text-align: left;
+    }
+
+    @include bem-e("section") {
+        $header-height: 48px;
+
+        background: $color-white;
+        box-shadow: 0 0 6px rgba(0,0,0,0.16);
+        margin-bottom: $padding-default;
+        min-height: $header-height;
+        padding: $padding-default;
+        padding-top: $header-height + $padding-default;
+        position: relative;
+        transition: all ease-in-out 0.4s;
+
+        @include bem-e("header") {
+            background: $color-primary;
+            color: $color-white;
+            font-size: 14px;
+            font-weight: bold;
+            height: $header-height;
+            line-height: $header-height;
+            padding: 0 $padding-default;
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 100%;
+        }
+
+        @include bem-e("settings") {
+            float: left;
+            height: $header-height;
+            line-height: $header-height;
+            position: relative;
+
+
+
+            @include bem-e("menu-btn") {
+                background-color: transparent;
+                background-image: url("/Client/Images/open-menu.svg");
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: 24px;
+                border: none;
+                cursor: pointer;
+                height: $header-height;
+                margin-left: -$padding-default;
+                outline: none;
+                padding: 0;
+                text-align: center;
+                width: $header-height;
+
+                &:hover {
+                    background-color: $color-primary--dark;
+                }
+            }
+
+            @include bem-e("popup") {
+                background: $color-white;
+                box-shadow: 0 0 4px rgba(0,0,0,.26);
+                height: 0;
+                left: 10px;
+                line-height: 1.8;
+                opacity: 0;
+                overflow: hidden;
+                position: absolute;
+                top: $header-height - 10;
+                transition: opacity linear 0.15s;
+                width: 210px;
+                z-index: 5;
+
+                @include bem-m("active") {
+                    height: auto;
+                    opacity: 1;
+                }
+            }
+
+            @include bem-e("action-btn") {
+                background: transparent;
+                border: none;
+                color: $color-text;
+                cursor: pointer;
+                display: block;
+                font-family: $font-family--primary;
+                font-size: 12px;
+                height: 42px;
+                padding: 0 15px;
+                text-align: right;
+                width: 100%;
+
+                &:hover {
+                    background: $color-white--dark;
+                    color: $color-primary;
+                }
+            }
+
+            @include bem-e("action-icon") {
+                display: inline-block;
+                margin-left: 5px;
+                vertical-align: middle;
+                width: 12px;
+            }
+        }
+
+        @include bem-e("body") {
+            overflow-y: visible;
+            position: relative;
+            transition: height linear 0.2s;
+        }
+
+        @include bem-m("maximized") {
+            bottom: 0;
+            height: 100%;
+            left: 0;
+            position: fixed;
+            right: 0;
+            top: 0;
+            width: 100%;
+            z-index: $section-maximized;
+
+            .app__section__body {
+                height: 100%;
+                overflow-y: auto;
+            }
+        }
+
+        @include bem-m("minimized") {
+            min-height: $header-height;
+            padding: 0;
+            overflow: visible;
+
+            .app__section__body {
+                height: 0;
+                opacity: 0;
+                overflow: hidden;
+            }
+        }
+
+        @include bem-m("success") {
+            .app__section__header {
+                background: $color-success;
+            }
+        }
+    }
+
+    @include bem-e("grid-wrapper") {
+        overflow-x: auto;
+    }
+
+    @include bem-m("danger") {
+        color: $color-danger;
+    }
+
+    @include bem-m("warning") {
+        color: $color-warning;
+    }
+
+    @include bem-m("info") {
+        color: $color-info;
+    }
+
+    @include bem-m("success") {
+        color: $color-success;
+    }
+
+    @include bem-m("primary") {
+        color: $color-primary;
+    }
+}
+
+.filter-form {
+    background: $color-white--dark;
+    border: 1px solid $color-border;
+    margin: 0 auto 15px auto;
+    max-width: 900px;
+    padding: 8px 15px;
+
+    &__action-wrapper {
+        padding-top: 5px;
+
+        @include mq("sd") {
+            padding-top: 30px;
+        }
+    }
+
+    &__clear-wrapper {
+        padding-top: 5px;
+    }
+
+    &__btn {
+        display: inline-block;
+        width: auto;
+    }
+
+    &--big {
+        max-width: 1300px;
+    }
+}
+
+p {
+    font-size: 14px;
+}

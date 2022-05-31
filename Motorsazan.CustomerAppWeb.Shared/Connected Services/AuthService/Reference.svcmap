@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="783aa69a-9331-43f4-a021-e4da51f039fa" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://erp-server:2021/WebServices/App.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="App.xsd" MetadataType="Schema" ID="3a40115d-aa6d-4a56-9005-c10f8cd45078" SourceId="1" SourceUrl="http://erp-server:2021/WebServices/App.svc?xsd=xsd1" />
+    <MetadataFile FileName="App.disco" MetadataType="Disco" ID="e9cdfec5-d451-4ed4-9d4e-54fd62dca405" SourceId="1" SourceUrl="http://erp-server:2021/WebServices/App.svc?disco" />
+    <MetadataFile FileName="App.wsdl" MetadataType="Wsdl" ID="1a9a4955-11c2-4668-a860-fcef05eafce4" SourceId="1" SourceUrl="http://erp-server:2021/WebServices/App.svc?wsdl" />
+    <MetadataFile FileName="App1.xsd" MetadataType="Schema" ID="dff3ea82-2d1b-4e01-a823-659f4b0222c1" SourceId="1" SourceUrl="http://erp-server:2021/WebServices/App.svc?xsd=xsd2" />
+    <MetadataFile FileName="App2.xsd" MetadataType="Schema" ID="1b88e38a-712e-4d02-b1fe-3edaad5ef21f" SourceId="1" SourceUrl="http://erp-server:2021/WebServices/App.svc?xsd=xsd3" />
+    <MetadataFile FileName="App3.xsd" MetadataType="Schema" ID="3b984b0e-e174-4c6f-ac6a-74621c1abe99" SourceId="1" SourceUrl="http://erp-server:2021/WebServices/App.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

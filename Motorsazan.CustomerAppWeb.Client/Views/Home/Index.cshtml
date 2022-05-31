@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "صفحه اصلی";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head
+{
+    <link href="~/DX.ashx?cssfile=~/Views/Home/Css/Index.min.css" rel="Stylesheet" />
+}
+<div class="home">
+    <div class="row">
+        <div class="col-xs-6 col-md-7">
+            <a href="@Url.Action("Index", "ProductManagement")" class="home__link home__link--big home__link--success">
+                <img src="/Client/Images/icon__project--white.svg" class="home__link__icon" alt="مدیریت محصولات" />
+                مدیریت محصولات
+            </a>
+        </div>
+        <div class="col-xs-6 col-md-5">
+            <a href="@Url.Action("Index", "NotificationSlider")" class="home__link home__link--big home__link--info">
+                <img src="/Client/Images/icon__repair--white.svg" class="home__link__icon" alt="اخبار سامانه" />
+                اخبار سامانه
+            </a>
+        </div>
+    </div>
+    
+</div>

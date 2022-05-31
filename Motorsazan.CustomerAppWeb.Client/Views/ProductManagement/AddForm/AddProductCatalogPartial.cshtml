@@ -1,0 +1,30 @@
+﻿<script src="~/DX.ashx?jsfile=~/Client/Src/Js/Views/Shared/components/_Uploader.js"></script>
+<script src="~/DX.ashx?jsfile=~/Client/Src/Js/Dependencies/Bootstrap/_Bootstrap.js"></script>
+<div class="row">
+<div class="col-xs-12 col-md-12 col-lg-12 ">
+    <div class="col-xs-12 col-md-12">
+        <div class="app__form-item" id="productCatalogAttachmentUploaderParent">
+            <label class="app__form-label">
+                انتخاب کاتالوگ
+            </label>
+            <input type="file" name="calaogUp" id="calaogUp" />
+            <div class="app__form-error app__hide" id="productCatalogAttachmentUploaderError">
+                فایل کاتالوگ انتخاب نشده است
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-xs-12 col-md-12 col-lg-12 filter-form__action-wrapper">
+    @Html.DevExpress().Button(settings =>
+    {
+        settings.Name = "addSaveCatalogBtn";
+        settings.Text = "ثبت";
+        settings.UseSubmitBehavior = false;
+        settings.EnableClientSideAPI = true;
+        settings.Styles.CssPostfix = "add-form__btn";
+        settings.Width = Unit.Percentage(100);
+        settings.ClientSideEvents.Click =
+            "motorsazanClient.productManagement.handleAddCatalog";
+    }).GetHtml()
+</div>
+</div>

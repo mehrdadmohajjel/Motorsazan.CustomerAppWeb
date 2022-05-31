@@ -1,0 +1,97 @@
+﻿<section class="shortcutbar" 
+         data-jwt="@ViewBag.JWT"
+         id="shortcutbarDrawer">
+    <button class="shortcutbar__show-menu-btn"
+            id="shortcutbarExpandeBtn">
+        <img src="/Client/Images/icon__grid--white.svg"
+             class="shortcutbar__show-menu-btn__icon" />
+    </button>
+    <div class="shortcutbar__logo-wrapper">
+        <img src="~/Client/Images/logo--white.png"
+             class="shortcutbar__logo" />
+        <span class="shortcutbar__logo-text">
+            سیستم جامع اطلاعاتی
+            <br />
+            شرکت موتورسازان تراکتورسازی
+        </span>
+    </div>
+     
+    <div class="shortcutbar__links-wrapper">
+        <a href="http://appserver/Salaryfish/login.aspx?ReturnUrl=%2fSalaryfish%2fdefault.aspx" class="shortcutbar__link-btn">
+            <img src="~/Client/Images/icon__money--white.svg"
+                 class="shortcutbar__link-btn__icon" />
+            <span class="shortcutbar__link-btn__text">
+                فیش حقوق
+            </span>
+        </a>
+        <a href="File://lanserver/shortcuts/shortcuts/soft_per.lnk" class="shortcutbar__link-btn">
+            <img src="~/Client/Images/icon__stamp--white.svg"
+                 class="shortcutbar__link-btn__icon" />
+            <span class="shortcutbar__link-btn__text">
+                درخواست مجوز
+            </span>
+        </a>
+        <a href="File://lanserver/shortcuts/LNK/office.lnk" class="shortcutbar__link-btn">
+            <img src="~/Client/Images/icon__chat--white.svg"
+                 class="shortcutbar__link-btn__icon" />
+            <span class="shortcutbar__link-btn__text">
+                مکاتبات
+            </span>
+        </a>
+        <a href="File://lanserver/shortcuts/LNK/vacation_mtr.lnk" class="shortcutbar__link-btn">
+            <img src="~/Client/Images/icon__clock--white.svg"
+                 class="shortcutbar__link-btn__icon" />
+            <span class="shortcutbar__link-btn__text">
+                مرخصی ساعتی
+            </span>
+        </a>
+        <a href="File://lanserver/shortcuts/LNK/AtdsCtrl.lnk" class="shortcutbar__link-btn">
+            <img src="~/Client/Images/icon__list--white.svg"
+                 class="shortcutbar__link-btn__icon" />
+            <span class="shortcutbar__link-btn__text">
+                حضور غیاب
+            </span>
+        </a>
+        <a href="File://Lanserver/shortcuts/LNK/OVTGrant.lnk" class="shortcutbar__link-btn">
+            <img src="~/Client/Images/icon__cost--white.svg"
+                 class="shortcutbar__link-btn__icon" />
+            <span class="shortcutbar__link-btn__text">
+                اضافه کاری
+            </span>
+        </a>
+        <a href="File://lanserver/shortcuts/shortcuts/PurchRequest.lnk" class="shortcutbar__link-btn">
+            <img src="~/Client/Images/icon__shop--white.svg"
+                 class="shortcutbar__link-btn__icon" />
+            <span class="shortcutbar__link-btn__text">
+                درخواست خرید
+            </span>
+        </a>
+        <a href="File://lanserver/shortcuts/LNK/hesab.lnk" class="shortcutbar__link-btn">
+            <img src="~/Client/Images/icon__pay--white.svg"
+                 class="shortcutbar__link-btn__icon" />
+            <span class="shortcutbar__link-btn__text">
+                حقوق علی الحساب
+            </span>
+        </a>
+        <a href="File://lanserver/shortcuts/LNK/suggestion.url" class="shortcutbar__link-btn">
+            <img src="~/Client/Images/icon__recommend--white.svg"
+                 class="shortcutbar__link-btn__icon" />
+            <span class="shortcutbar__link-btn__text">
+                پیشنهادات
+            </span>
+        </a>
+    </div>
+
+    <div class="shortcutbar__search-form">
+        <div class="shortcutbar__search-input-wrapper">
+            <input class="shortcutbar__search-input" 
+                   placeholder="عنوان سیستم خود را وارد کنید"
+                   id="shortcutbarSearchInput"
+                   type="text" />
+        </div>
+        <div id="shortcutbarSearchResult" class="shortcutbar__search-result">
+        </div>
+    </div>
+
+</section>
+<div class="shortcutbar__overlay" id="shortcutbarOverlay"></div>

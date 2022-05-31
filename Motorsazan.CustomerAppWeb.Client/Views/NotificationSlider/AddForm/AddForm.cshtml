@@ -1,0 +1,154 @@
+﻿@using System.Drawing
+<div class="row">
+
+        <div class="col-xs-12 col-md-12 col-lg-12">
+            <div class="app__form-item">
+                <label class="app__form-label">
+                    عنوان اعلان
+                </label>
+                <div id="addFormTopicTextBoxParent">
+                    @Html.DevExpress().TextBox(settings =>
+                    {
+                        settings.Name = "addFormTopicTextBox";
+                        settings.Properties.NullText = "";
+                        settings.Properties.ClientSideEvents.ValueChanged =
+                            "motorsazanClient.notificationSlider.handleAddFormTopicTextBoxValueChanged";
+
+                    }).GetHtml()
+                </div>
+                <div class="app__form-error app__hide" id="addFormTopicTextBoxError">
+                    عنوان اعلان وارد نشده است
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-md-12 col-lg-12">
+            <div class="app__form-item">
+                <label class="app__form-label">
+                    متن اعلان
+                </label>
+                <div id="addFormNewsTextTextBoxParent">
+                    @Html.DevExpress().Memo(settings =>
+                    {
+                        settings.Name = "addFormNewsTextTextBox";
+                        settings.Properties.NullText = "";
+                        settings.Properties.ClientSideEvents.ValueChanged =
+                            "motorsazanClient.notificationSlider.handleAddFormNewsTextTextBoxValueChanged";
+
+                    }).GetHtml()
+                </div>
+                <div class="app__form-error app__hide" id="addFormNewsTextTextBoxError">
+                    متن اعلان وارد نشده است
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-md-12 col-lg-12">
+            <div class="col-xs-12 col-md-12">
+                <div class="app__form-item" id="notificationSliderImageAttachmentUploaderParent">
+                    <label class="app__form-label">
+                        تصویر اعلان
+                    </label>
+                    @*@{Html.RenderAction("ImageUploader", "NotificationSlider");}*@
+                    <input type="file" name="imgUp" id="imgUp" />
+
+                    @*<div id="notificationSliderImageAttachmentUploader"></div>*@
+                    <div class="app__form-error app__hide" id="notificationSliderImageAttachmentUploaderError">
+                        تصویر اعلان انتخاب نشده است
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-md-12 " id="addFormPeriodStartDatePickerParent">
+            <div class="app__form-item">
+                <label class="app__form-label">
+                    از تاریخ
+                </label>
+                <div>
+                    <input type="text" class="app__form-datepicker"
+                           id="addFormPeriodStartDatePicker"
+                           name="addFormPeriodStartDatePicker"
+                           placeholder="از تاریخ"
+                           data-mddatetimepicker="true"
+                           data-englishnumber="true"
+                           data-targetdateselector="#addFormPeriodStartDatePicker" />
+                </div>
+                <div class="app__form-error app__hide" id="addFormPeriodStartDatePickerError">
+                    شروع بازه زمانی انتخاب نشده است
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-md-12 " id="addFormPeriodEndDatePickerParent">
+            <div class="app__form-item">
+                <label class="app__form-label">
+                    تا تاریخ
+                </label>
+                <div>
+                    <input type="text" class="app__form-datepicker"
+                           id="addFormPeriodEndDatePicker"
+                           name="addFormPeriodEndDatePicker"
+                           placeholder="تا تاریخ"
+                           data-mddatetimepicker="true"
+                           data-englishnumber="true"
+                           data-targetdateselector="#addFormPeriodEndDatePicker" />
+                </div>
+                <div class="app__form-error app__hide" id="addFormPeriodEndDatePickerError">
+                    پایان بازه زمانی انتخاب نشده است
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-12 col-lg-12 filter-form__action-wrapper" id="saveDive">
+            @Html.DevExpress().Button(settings =>
+            {
+                settings.Name = "addPeopleSaveBtn";
+                settings.Text = "ثبت";
+                settings.UseSubmitBehavior = false;
+                settings.EnableClientSideAPI = true;
+                settings.Styles.CssPostfix = "add-form__btn";
+                settings.Width = Unit.Percentage(100);
+                settings.ClientSideEvents.Click =
+                    "motorsazanClient.notificationSlider.handleAddNews";
+
+            }).GetHtml()
+
+        </div>
+        <div class="col-xs-12 col-md-12 col-lg-12 app__hide  filter-form__action-wrapper"
+             id="editDiv">
+            <div style="padding-bottom: 10px;">
+                @Html.DevExpress().Button(settings =>
+           {
+               settings.Name = "editeBtn";
+               settings.Text = "ویرایش";
+               settings.UseSubmitBehavior = false;
+               settings.EnableClientSideAPI = true;
+               settings.Styles.Style.BackColor = Color.Orange;
+               settings.Styles.CssPostfix = "add-form__btn";
+               settings.Width = Unit.Percentage(100);
+              settings.ClientSideEvents.Click =
+                   "motorsazanClient.notificationSlider.handleEditNews";
+           }).GetHtml()
+            </div>
+
+            @Html.DevExpress().Button(settings =>
+            {
+                settings.Name = "cancelBtn";
+                settings.Text = "انصراف";
+                settings.UseSubmitBehavior = false;
+                settings.EnableClientSideAPI = true;
+                settings.Styles.Style.BackColor = Color.Red;
+                settings.Styles.CssPostfix = "add-form__btn";
+                settings.Width = Unit.Percentage(100);
+                settings.ClientSideEvents.Click =
+                    "motorsazanClient.notificationSlider.handleCancel";
+            }).GetHtml()
+
+        </div>
+</div>
+
+
+
+

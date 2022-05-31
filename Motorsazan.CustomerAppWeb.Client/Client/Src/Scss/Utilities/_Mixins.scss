@@ -1,0 +1,109 @@
+@mixin btn-common {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0;
+  outline: none;
+  padding: 0;
+  position: relative;
+  transition: all ease-in-out 0.2s;
+}
+
+@mixin container-common {
+  background-color: $color-white;
+  box-shadow: 0 em(1px) em(3px) rgba(0,0,0,0.16);
+  padding: em($padding-deault);
+  position: relative;
+}
+
+@mixin form-input {
+  background-color: $color-white-dark;
+  border: 1px solid $color-border;
+  border-radius: em(4px);
+  color: $color-text;
+  display: block;
+  direction: ltr;
+  font-family: $font-family-primary;
+  font-size: em(16px);
+  height: em(55px);
+  line-height: em(55px);
+  margin: em(5px) auto;
+  outline: none;
+  padding: 0 em(10px);
+  position: relative;
+  text-align: left;
+  transition: all ease-in-out 0.2s;
+  width: 100%;
+  -webkit-appearance: none;
+
+  &::placeholder {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  &:focus,
+  &:active {
+    background-color: $color-white;
+    border-color: $color-border;
+  }
+}
+
+@mixin form-input--error {
+  border-color: $color-danger; 
+}
+
+@mixin form-input--disabled {
+    background-color: lighten($color-border, 10%);
+    color: lighten($color-border, 5%);
+}
+
+@mixin overlay-common {
+  background: rgba(0,0,0,0.3);
+  bottom: 0;
+  position: fixed;
+  height: 0;
+  left: 0;
+  opacity: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  transition: opacity ease-in-out 0.3s;
+  right: 0;
+  top: 0;
+  width: 0;
+  z-index: $zIndex-overlay;
+}
+
+@mixin mq($break-size) {
+    @if $break-size == "tablet" {
+        @media(min-width: $breakpoint-medium-size) {
+            @content;
+        }
+    }
+    @else if $break-size == "sd" {
+        @media(min-width: $breakpoint-large-size) {
+            @content;
+        }
+    }
+    @else if $break-size == "sd-plus" {
+        @media(min-width: $breakpoint-large-plus-size) {
+            @content;
+        }
+    }
+    @else if $break-size == "ld" {
+        @media(min-width: $breakpoint-xlarge-size) {
+            @content;
+        }
+    }
+}
+
+@mixin bem-e($element) {
+  &__#{$element} {
+    @content;
+  }
+}
+
+@mixin bem-m($modefier) {
+  &--#{$modefier} {
+    @content;
+  }
+}

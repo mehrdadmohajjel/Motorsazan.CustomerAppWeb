@@ -1,0 +1,50 @@
+﻿@{
+    var userAvatar = "/client/images/profile--empty.png";
+    var userFullName = "ناشناس";
+
+    var isUserSessionValid = !String.IsNullOrEmpty(ViewBag.UserFullName);
+    if (isUserSessionValid)
+    {
+        userFullName = ViewBag.UserFullName;
+        userAvatar = ViewBag.UserAvatarUrl;
+    }
+}
+
+<div class="profile" id="navProfileInfo">
+    <div class="profile__mini-info">
+        <div class="profile__image-wrapper">
+            <img class="profile__image"
+                 alt="تصویر کاربر"
+                 src="@userAvatar" />
+        </div>
+        
+
+        @userFullName
+
+    </div>
+    <div class="profile__popup" id="navProfilePopup">
+        <div class="profile__image-wrapper profile__image-wrapper--big">
+            <img class="profile__image profile__image--big"
+                 alt="تصویر کاربر"
+                 src="@userAvatar" />
+        </div>
+        
+
+        <div class="profile__full-name">
+            همکار گرامی
+            <b>
+                @userFullName
+            </b>
+            خوش آمدید!
+        </div>
+        @Html.DevExpress().Button(settings =>
+        {
+            settings.Name = "panelSignoutBtn";
+            settings.UseSubmitBehavior = false;
+            settings.Text = "خروج از حساب کاربری";
+            settings.RenderMode = ButtonRenderMode.Danger;
+            settings.ClientSideEvents.Click = "motorsazanClient.authentication.signout";
+        }).GetHtml()
+
+    </div>
+</div>

@@ -1,0 +1,26 @@
+﻿
+@model Motorsazan.CMMS.Shared.Models.Output.ProductiveWorkOrder.OutputGetWorkOrderStatusTypeList[]
+
+@Html.DevExpress().ComboBox(
+    settings =>
+    {
+        settings.Name = "filterFormStatusTypeCombo";
+        settings.CallbackRouteValues = new { Controller = "NonProductiveWorkOrder", Action = "GetNonProductiveWorkOrderAllStatusList" };
+        settings.Width = Unit.Percentage(100);
+        settings.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.None;
+        settings.Properties.NullText = "وضعیت را انتخاب نمایید";
+        settings.SelectedIndex = 0;
+        settings.Properties.CallbackPageSize = 100;
+        settings.Properties.IncrementalFilteringMode = IncrementalFilteringMode.Contains;
+        settings.Properties.IncrementalFilteringDelay = 200;
+        settings.Properties.DropDownWidth = Unit.Pixel(400);
+        settings.SettingsLoadingPanel.Text = "در حال دریافت اطلاعات";
+        settings.SelectedIndex = 0;
+
+
+        settings.Properties.ValueField = "WorkOrderStatusTypeId";
+        settings.Properties.TextField = "TypeName";
+
+        settings.Properties.ValueType = typeof(long);
+    }).BindList(Model).GetHtml()
+

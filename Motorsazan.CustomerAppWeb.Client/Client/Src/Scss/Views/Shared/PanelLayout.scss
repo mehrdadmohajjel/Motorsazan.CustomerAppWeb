@@ -1,0 +1,19 @@
+﻿@import "../../Utilities/_Index.scss";
+
+@import "../../Dependencies/Fonts/_index.scss";
+@import "../../Dependencies/DevExpress/_Override.scss";
+@import "../../Dependencies/Form/_index.scss";
+@import "../../Dependencies/Bootstrap/_Bootstrap.scss";
+@import "../../Dependencies/DatePicker/_PersianDateTimePicker.scss"; 
+@import "./Partials/_NavigationBar.scss";
+@import "./Partials/_Authentication.scss";
+@import "./Partials/_ShortcutBar.scss";
+@import "./Partials/_LoadingModal.scss";
+@import "./Partials/_MessageModal.scss";
+@import "./Partials/_ContentModal.scss";
+@import "./Components/Uploader.scss";
+
+//_AppBase.scss must be a last item in the list
+@import "./Partials/_AppBase.scss";
+
+ 

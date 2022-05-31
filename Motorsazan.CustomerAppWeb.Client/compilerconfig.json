@@ -1,0 +1,10 @@
+﻿[
+  {
+    "outputFile": "Client/Dist/Css/PanelLayout.css",
+    "inputFile": "Client/Src/Scss/Views/Shared/PanelLayout.scss"
+  },
+  {
+    "outputFile": "Views/ProductManagement/Css/Index.css",
+    "inputFile": "Views/ProductManagement/Css/Index.scss"
+  }
+]

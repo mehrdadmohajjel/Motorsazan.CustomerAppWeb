@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Motorsazan.CustomerAppWeb.Shared.Models.Output.ProductManagement.OutputGetProductCategoryList>
+
+@Html.DevExpress().ComboBox(
+    settings =>
+    {
+        settings.Name = "addFormProductCategoryCombo";
+        settings.CallbackRouteValues = new { Controller = "ProductManagement", Action = "GetProductCategoryList" };
+        settings.Width = Unit.Percentage(100);
+        settings.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.None;
+        settings.Properties.NullText = "دسته بندی محصول را انتخاب نمایید";
+        settings.SelectedIndex = 0;
+        settings.Properties.CallbackPageSize = 100;
+        settings.Properties.IncrementalFilteringMode = IncrementalFilteringMode.Contains;
+        settings.Properties.IncrementalFilteringDelay = 200;
+        settings.Properties.DropDownWidth = Unit.Pixel(400);
+        settings.SettingsLoadingPanel.Text = "در حال دریافت اطلاعات";
+        settings.SelectedIndex = -1;
+
+        settings.Properties.ValueField = "ProductionCategoryId";
+        settings.Properties.ValueType = typeof(int);
+        settings.Properties.Columns.Add("ProductionCategoryShowName", "عنوان دسته بندی");
+        settings.Properties.ClientSideEvents.SelectedIndexChanged =
+            "motorsazanClient.productManagement.handleAddFormProductCategoryComboChanged";
+
+
+    }).BindList(Model).GetHtml()

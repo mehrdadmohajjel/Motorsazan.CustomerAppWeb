@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/MotorsazanAA" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/MotorsazanAA" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://erp-server:2021/WebServices/App.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Shared.WebService" />
+  <xs:complexType name="WebServiceInputCreateSession">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Parameters" nillable="true" type="tns:WebServiceInputCreateSessionParams" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WebServiceInputCreateSession" nillable="true" type="tns:WebServiceInputCreateSession" />
+  <xs:complexType name="WebServiceInputCreateSessionParams">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApplicationType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ApplicationVersion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WebServiceInputCreateSessionParams" nillable="true" type="tns:WebServiceInputCreateSessionParams" />
+  <xs:complexType name="WebServiceOutputCreateSession">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Parameters" nillable="true" type="tns:WebServiceOutputCreateSessionParams" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="tns:WebServiceStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WebServiceOutputCreateSession" nillable="true" type="tns:WebServiceOutputCreateSession" />
+  <xs:complexType name="WebServiceOutputCreateSessionParams">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="JsonWebToken" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WebServiceOutputCreateSessionParams" nillable="true" type="tns:WebServiceOutputCreateSessionParams" />
+  <xs:complexType name="WebServiceStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WebServiceStatus" nillable="true" type="tns:WebServiceStatus" />
+  <xs:complexType name="WebServiceInputGetEndUserInfoByJsonWebToken">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Parameters" nillable="true" type="tns:WebServiceInputGetEndUserInfoByJsonWebTokenParams" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WebServiceInputGetEndUserInfoByJsonWebToken" nillable="true" type="tns:WebServiceInputGetEndUserInfoByJsonWebToken" />
+  <xs:complexType name="WebServiceInputGetEndUserInfoByJsonWebTokenParams">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="JsonWebToken" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WebServiceInputGetEndUserInfoByJsonWebTokenParams" nillable="true" type="tns:WebServiceInputGetEndUserInfoByJsonWebTokenParams" />
+  <xs:complexType name="WebServiceOutputGetEndUserInfoByJsonWebToken">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Parameters" nillable="true" type="tns:WebServiceOutputGetEndUserInfoByJsonWebTokenParams" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="tns:WebServiceStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WebServiceOutputGetEndUserInfoByJsonWebToken" nillable="true" type="tns:WebServiceOutputGetEndUserInfoByJsonWebToken" />
+  <xs:complexType name="WebServiceOutputGetEndUserInfoByJsonWebTokenParams">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Shared.WebService" minOccurs="0" name="DepartmentList" nillable="true" type="q1:ArrayOfUserDepartmentList" />
+      <xs:element minOccurs="0" name="EID" type="xs:int" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MobileNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WebServiceOutputGetEndUserInfoByJsonWebTokenParams" nillable="true" type="tns:WebServiceOutputGetEndUserInfoByJsonWebTokenParams" />
+  <xs:complexType name="WebServiceInputReportEndUserLoginInfoByJsonWebToken">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Parameters" nillable="true" type="tns:WebServiceInputReportEndUserLoginInfoByJsonWebTokenParams" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WebServiceInputReportEndUserLoginInfoByJsonWebToken" nillable="true" type="tns:WebServiceInputReportEndUserLoginInfoByJsonWebToken" />
+  <xs:complexType name="WebServiceInputReportEndUserLoginInfoByJsonWebTokenParams">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApplicationType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ApplicationVersion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="JsonWebToken" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WebServiceInputReportEndUserLoginInfoByJsonWebTokenParams" nillable="true" type="tns:WebServiceInputReportEndUserLoginInfoByJsonWebTokenParams" />
+  <xs:complexType name="WebServiceOutputReportEndUserLoginInfoByJsonWebToken">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Status" nillable="true" type="tns:WebServiceStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WebServiceOutputReportEndUserLoginInfoByJsonWebToken" nillable="true" type="tns:WebServiceOutputReportEndUserLoginInfoByJsonWebToken" />
+  <xs:complexType name="WebServiceInputValidateSessionByJsonWebToken">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Parameters" nillable="true" type="tns:WebServiceInputValidateSessionByJsonWebTokenParams" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WebServiceInputValidateSessionByJsonWebToken" nillable="true" type="tns:WebServiceInputValidateSessionByJsonWebToken" />
+  <xs:complexType name="WebServiceInputValidateSessionByJsonWebTokenParams">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="JsonWebToken" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WebServiceInputValidateSessionByJsonWebTokenParams" nillable="true" type="tns:WebServiceInputValidateSessionByJsonWebTokenParams" />
+  <xs:complexType name="WebServiceOutputValidateSessionByJsonWebToken">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Parameters" nillable="true" type="tns:WebServiceOutputValidateSessionByJsonWebTokenParams" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="tns:WebServiceStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WebServiceOutputValidateSessionByJsonWebToken" nillable="true" type="tns:WebServiceOutputValidateSessionByJsonWebToken" />
+  <xs:complexType name="WebServiceOutputValidateSessionByJsonWebTokenParams">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsValid" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WebServiceOutputValidateSessionByJsonWebTokenParams" nillable="true" type="tns:WebServiceOutputValidateSessionByJsonWebTokenParams" />
+</xs:schema>

@@ -1,0 +1,109 @@
+﻿.app {
+
+    @include bem-e("form-item") {
+        clear: both;
+        margin-bottom: $padding-default / 2;
+        position: relative;
+        text-align: right;
+
+        @include bem-m("action") {
+            padding-top: $padding-default;
+            text-align: left;
+        }
+    }
+
+    @include bem-e("form-heading") {
+        display: block;
+        font-size: 16px;
+        font-weight: bold;
+        margin: 0 auto;
+        padding: $padding-default 0;
+        padding-bottom: $padding-default * 1.5;
+    }
+
+    @include bem-e("form-label") {
+        display: block;
+        font-size: 12px;
+        font-weight: bold;
+        margin-bottom: $padding-default/2;
+    }
+
+    @include bem-e("form-checkbox") {
+        padding-top: 30px;
+    } 
+    
+    @include bem-e("form-datepicker") {
+        border: 1px solid #DCDCDC;
+        display: block;
+        font-size: 13px;
+        height: 33px;
+        outline: none;
+        padding: 5px;
+        width: 100%;
+
+        &:focus {
+            border-color: #35B86B;
+        }
+    }
+
+    @include bem-e("form-error") {
+        background: $color-danger;
+        border-radius: 2px;
+        color: $color-white;
+        display: inline-block;
+        font-size: 12px;
+        font-weight: normal;
+        margin-top: $padding-default / 2;
+        padding: 2px 15px;
+        position: relative;
+
+        &:after {
+            border-bottom: 5px solid $color-danger;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            content: "";
+            right: 5px;
+            position: absolute;
+            top: -5px;
+        }
+    }
+
+    @include bem-e("link") {
+        font-size: 14px;
+        color: $color-text;
+        cursor: default;
+        text-decoration: none;
+
+        @include bem-e("action") {
+            color: $color-info;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: bold;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    @include bem-e("form-grid-mini-btn") {
+        border: none !important;
+        display: inline-block !important;
+        font-size: 11px !important;
+        padding: 3px 8px !important;
+        vertical-align: middle;
+        width: auto !important;
+
+        @include bem-m("danger") {
+            background-color: $color-danger;
+
+            &:hover {
+                background-color: darken($color-danger, 15%);
+            }
+        }
+
+        .dxb {
+            padding: 0 !important;
+        }
+    }
+}

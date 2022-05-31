@@ -1,0 +1,146 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Motorsazan.CustomerAppWeb.Api</name>
+    </assembly>
+    <members>
+        <member name="M:Motorsazan.CustomerAppWeb.Api.Controllers.NotificationSliderController.AddImageToProduction(Motorsazan.CustomerAppWeb.Shared.Models.Input.NotificationSlider.InputAddImageToNotificationSlider)">
+            <summary>
+                آپلود عکس محصول
+            </summary>
+            <param name="values"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Motorsazan.CustomerAppWeb.Api.Controllers.NotificationSliderController.AddNotificationSlider(Motorsazan.CustomerAppWeb.Shared.Models.Input.NotificationSlider.InputAddNotificationSlider)">
+            <summary>
+                افزودن اعلان جدید
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Motorsazan.CustomerAppWeb.Api.Controllers.NotificationSliderController.EditNotificationSlider(Motorsazan.CustomerAppWeb.Shared.Models.Input.NotificationSlider.InputEditNotificationSlider)">
+            <summary>
+                ویرایش اعلان اسلایدر
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Motorsazan.CustomerAppWeb.Api.Controllers.NotificationSliderController.GetLastNews">
+            <summary>
+                دریافت آخرین خبر
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Motorsazan.CustomerAppWeb.Api.Controllers.NotificationSliderController.GetLastFiveNews">
+            <summary>
+                دریافت 5اعلان آخر
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Motorsazan.CustomerAppWeb.Api.Controllers.NotificationSliderController.GetNotificationSliderListByCondition(Motorsazan.CustomerAppWeb.Shared.Models.Input.NotificationSlider.InputGetNotificationSliderListByCondition)">
+            <summary>
+                دریافت لیست اخبار بر اساس شرایط
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Motorsazan.CustomerAppWeb.Api.Controllers.NotificationSliderController.GetNotificationSliderListByNotificationSliderId(Motorsazan.CustomerAppWeb.Shared.Models.Input.NotificationSlider.InputGetNotificationSliderListByNotificationSliderId)">
+            <summary>
+                دریافت جزئیات اعلان با شناسه اعلان
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Motorsazan.CustomerAppWeb.Api.Controllers.NotificationSliderController.GetNotificationSliderAttachmentFileByFileName(Motorsazan.CustomerAppWeb.Shared.Models.Input.NotificationSlider.InputGetNotificationSliderAttachmentFileByFileName)">
+            <summary>
+                دریافت جزئیات اعلان با شناسه اعلان
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Motorsazan.CustomerAppWeb.Api.Controllers.NotificationSliderController.RemoveNotificationSliderByNotificationSliderId(Motorsazan.CustomerAppWeb.Shared.Models.Input.NotificationSlider.InputRemoveNotificationSliderByNotificationSliderId)">
+            <summary>
+                حذف اعلان اسلایدر بر اساس شناسه جدول اعلان اسلایدر
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Motorsazan.CustomerAppWeb.Api.Controllers.ProductManagementController.AddProduct(Motorsazan.CustomerAppWeb.Shared.Models.Input.ProductManagement.InputAddProduct)">
+            <summary>
+                دریافت لیست گروه های محصولات
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Motorsazan.CustomerAppWeb.Api.Controllers.ProductManagementController.GetProductCategoryList">
+            <summary>
+                دریافت لیست گروه های محصولات
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Motorsazan.CustomerAppWeb.Api.Controllers.ProductManagementController.GetProductionListByProductCategoryID(Motorsazan.CustomerAppWeb.Shared.Models.Input.ProductManagement.InputGetProductionListByProductCategoryId)">
+            <summary>
+                دریافت لسیت محصولات بر اساس شناسه جدول گروه بندی محصولات
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Motorsazan.CustomerAppWeb.Api.Controllers.ProductManagementController.AddImageToProduction(Motorsazan.CustomerAppWeb.Shared.Models.Input.ProductManagement.InputAddImageToProduction)">
+            <summary>
+                آپلود عکس محصول
+            </summary>
+            <param name="values"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Motorsazan.CustomerAppWeb.Api.Controllers.ProductManagementController.AddCatalogToProduction(Motorsazan.CustomerAppWeb.Shared.Models.Input.ProductManagement.InputAddCatalogToProduction)">
+            <summary>
+                آپلود کانالوگ محصول
+            </summary>
+            <param name="values"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Motorsazan.CustomerAppWeb.Api.Controllers.ProductManagementController.GetProductionAttachmentFileByProductionId(Motorsazan.CustomerAppWeb.Shared.Models.Input.ProductManagement.InputGetProductionAttachmentFileByProductionId)">
+            <summary>
+                دریافت عکس محصول
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Motorsazan.CustomerAppWeb.Api.Controllers.ProductManagementController.RemoveProductionByProductionId(Motorsazan.CustomerAppWeb.Shared.Models.Input.ProductManagement.InputRemoveProductionByProductionId)">
+            <summary>
+                حذف آپلود ضمیمه های محصول
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Motorsazan.CustomerAppWeb.Api.Utilities.QueryResultExtensions">
+            <summary>
+                Contains extension methods of QueryResult type
+            </summary>
+        </member>
+        <member name="M:Motorsazan.CustomerAppWeb.Api.Utilities.QueryResultExtensions.ToOutput``1(Motorsazan.CustomerAppWeb.Api.Models.Base.QueryResult)">
+            <summary>
+                Extension method that converts QueryResult to a TOutput
+            </summary>
+            <typeparam name="TOutput">Target class of conversion</typeparam>
+            <param name="queryResult">Source class of conversion</param>
+            <returns></returns>
+        </member>
+        <member name="T:Motorsazan.CustomerAppWeb.Api.Utilities.SqlParameterExtensions">
+            <summary>
+                Contains extension methods of related to SqlParameter
+            </summary>
+        </member>
+        <member name="M:Motorsazan.CustomerAppWeb.Api.Utilities.SqlParameterExtensions.ToSqlParameters``1(``0)">
+            <summary>
+                Convert input to list of SqlParameters
+            </summary>
+            <param name="input">Source of conversion</param>
+            <typeparam name="TInput">Must be a input class</typeparam>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

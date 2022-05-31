@@ -1,0 +1,23 @@
+﻿<section class="nav" id="nav">
+    <button class="nav__show-menu-btn"
+            id="navShowMenuBtn"
+            title="نمایش منو">
+        <span class="nav__show-menu-btn__line"></span>
+        <span class="nav__show-menu-btn__line"></span>
+        <span class="nav__show-menu-btn__line"></span>
+    </button>
+
+    @{Html.RenderPartial("~/Views/Shared/Partials/_Profile.cshtml");}
+
+    <nav class="nav__drawer" id="navDrawer">
+        <div class="nav__drawer__logo-wrapper">
+            <img src="~/Client/Images/logo--white.png" alt="logo" class="nav__drawer__logo" />
+            <div>
+                سیستم جامع اطلاعاتی
+            </div>
+            شرکت موتورسازان تراکتورسازی
+        </div>
+        @{Html.RenderPartial("~/Views/Shared/Partials/_NavigationMenuList.cshtml");}
+    </nav>
+    <div class="nav__overlay" id="navOverlay"></div>
+</section>

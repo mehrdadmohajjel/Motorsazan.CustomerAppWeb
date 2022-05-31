@@ -1,0 +1,81 @@
+﻿.loading {
+    align-items: center;
+    background: rgba(0,0,0,0.4);
+    display: flex;
+    height: 0;
+    justify-content: center;
+    opacity: 0;
+    overflow: hidden;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transition: opacity ease-in 0.2s;
+    width: 0;
+    z-index: -100000;
+
+    @include bem-m("active") {
+        bottom: 0;
+        height: 100%;
+        left: 0;
+        opacity: 1;
+        width: 100%;
+        z-index: $loading-zindex;
+    }
+
+    @include bem-e("form") {
+        background: $color-white;
+        box-shadow: 0 0 4px rgba(0,0,0,.26);
+        margin: 0 auto;
+        padding: em($padding-default);
+        padding-top: em($padding-default*1.8);
+        text-align: center;
+        width: em(190px);
+    }
+
+    @include bem-e("logo-wrapper") {
+        border: 3px solid $color-primary;
+        margin: 0 auto;
+        height: em(120px);
+        overflow: hidden;
+        position: relative;
+        width: em(120px);
+    }
+
+    @include bem-e("logo") {
+        animation-duration: 1.2s;
+        animation-fill-mode: both;
+        animation-name: rotateIn;
+        animation-iteration-count: infinite;
+        display: block;
+        height: 100%;
+        margin: 0 auto;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 100%;
+    }
+
+    @include bem-e("text") {
+        font-size: em(13px);
+        margin-top: em($padding-default, 13px);
+    }
+}
+
+
+@keyframes rotateIn {
+    0% {
+        -webkit-transform-origin: center;
+        transform-origin: center;
+        -webkit-transform: rotate3d(0, 0, 1, -361deg);
+        transform: rotate3d(0, 0, 1, -361deg);
+        opacity: 0.8;
+    }
+
+    100% {
+        -webkit-transform-origin: center;
+        transform-origin: center;
+        -webkit-transform: none;
+        opacity: 1;
+        transform: none;
+    }
+} 

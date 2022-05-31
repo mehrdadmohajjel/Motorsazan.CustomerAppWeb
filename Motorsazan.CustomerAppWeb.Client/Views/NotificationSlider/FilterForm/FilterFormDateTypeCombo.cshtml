@@ -1,0 +1,30 @@
+﻿@using Motorsazan.CMMS.Shared.Enums
+@Html.DevExpress().ComboBox(
+settings =>
+{
+    settings.Name = "filterFormDateTypeCombo";
+    settings.Width = Unit.Percentage(100);
+    settings.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.None;
+    settings.Properties.NullText = "فیلتر براساس";
+    settings.SelectedIndex = -1;
+    settings.Properties.CallbackPageSize = 100;
+    settings.Properties.IncrementalFilteringMode = IncrementalFilteringMode.Contains;
+    settings.Properties.IncrementalFilteringDelay = 200;
+    settings.SettingsLoadingPanel.Text = "در حال دریافت اطلاعات";
+    settings.SelectedIndex = 3;
+
+    settings.Properties.DropDownHeight = Unit.Pixel(280);
+
+    settings.Properties.Items.Add("روز قبل", DatePeriodType.Yesterday);
+    settings.Properties.Items.Add("روزجاری", DatePeriodType.CurrentDay);
+    settings.Properties.Items.Add("یک هفته اخیر", DatePeriodType.RecentWeek);
+    settings.Properties.Items.Add("یک ماه اخیر", DatePeriodType.RecentMonth);
+    settings.Properties.Items.Add("سه ماه اخیر", DatePeriodType.RecentThreeMonths);
+    settings.Properties.Items.Add("شش ماه اخیر", DatePeriodType.RecentSixMonths);
+    settings.Properties.Items.Add("از ابتدای سال", DatePeriodType.ThisYear);
+    settings.Properties.Items.Add("بازه زمانی خاص", DatePeriodType.CustomPeriod);
+
+    settings.Properties.ClientSideEvents.SelectedIndexChanged =
+        "motorsazanClient.noneProductiveWorkOrder.updateFilterFormDateSectionVisibility";
+}).GetHtml()
+

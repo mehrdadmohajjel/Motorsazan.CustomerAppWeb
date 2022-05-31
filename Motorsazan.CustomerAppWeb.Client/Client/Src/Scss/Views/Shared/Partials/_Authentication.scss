@@ -1,0 +1,145 @@
+﻿.profile {
+    $profile-font-size: 12px;
+
+    cursor: pointer;
+    float: left;
+    font-size: em($profile-font-size);
+    padding-left: em($padding-default*2, $profile-font-size);
+    position: relative;
+    z-index: $navigations-zindex;
+
+    &:after {
+        border-left: em(6px) solid transparent;
+        border-right: em(6px) solid transparent;
+        border-top: em(6px) solid $color-text;
+        content: "";
+        display: block;
+        height: 0;
+        left: em($padding-default);
+        position: absolute;
+        top: em(32px);
+        width: 0;
+    }
+
+    @include bem-e("image-wrapper") {
+        $image-size: em($navigation-height - 8, $profile-font-size);
+
+        background-color: $color-white;
+        border-radius: 50%;
+        border: 2px solid $color-white--dark;
+        display: inline-block;
+        height: $image-size;
+        margin-left: em($padding-default / 3, $profile-font-size);
+        overflow: hidden;
+        padding: em(3px, $profile-font-size);
+        position:relative;
+        vertical-align: middle;
+        width: $image-size;
+
+        @include bem-m("big") {
+            border: none;
+            box-shadow: 0 0 4px rgba(0,0,0,0.2);
+            display: block;
+            height: em(150px);
+            margin: 0 auto;
+            width: em(150px);
+        }
+    }
+
+    @include bem-e("image") {
+        position: absolute;
+        right: 0 ;
+        top: -4%;
+        width: 100%;
+    }
+
+    @include bem-e("popup") {
+        background-color: $color-white;
+        box-shadow: 0 0 4px rgba(0,0,0,0.26);
+        cursor: default;
+        font-size: 14px;
+        left: 0;
+        line-height: 1.8;
+        opacity: 0;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        text-align: center;
+        top: em($navigation-height);
+        transform: translateY(-1000px);
+        transition: opacity linear 0.2s, transform ease-in 0.02s;
+        width: 0;
+
+        @include bem-m("active") {
+            opacity: 1;
+            padding: em($padding-default);
+            transform: translateY(0);
+            width: em(280px);
+        }
+    }
+
+    @include bem-e("full-name") {
+        margin: em($padding-default / 4) auto;
+    }
+}
+
+.login {
+
+    @include bem-e("modal") {
+        align-items: center;
+        background: rgba(0, 0, 0, 0.45);
+        display: flex;
+        height: 0;
+        line-height: 1.9;
+        justify-content: center;
+        opacity: 0;
+        overflow: hidden;
+        position: fixed;
+        right: 0;
+        top: 0;
+        transition: opacity ease-in 0.25s;
+        width: 0;
+        z-index: -10000;
+
+        @include bem-m("active") {
+            bottom: 0;
+            height: 100%;
+            left: 0;
+            opacity: 1;
+            width: 100%;
+            z-index: $login-zindex;
+        }
+    }
+
+    @include bem-e("form") {
+        background: $color-white;
+        box-shadow: 0 0 4px rgba(0,0,0,.26);
+        margin: 0 auto;
+        max-width: em(400px);
+        padding: $padding-default $padding-default*2;
+        position: relative;
+        text-align: center;
+        width: 85%;
+    }
+
+    @include bem-e("title") {
+        font-size: 20px;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    @include bem-e("action-wrapper") {
+        padding-top: $padding-default;
+    }
+
+    @include bem-e("action-btn") {
+        text-align: center;
+        width: 100% !important;
+    }
+
+    @include bem-e("descriotion") {
+        color: $color-danger;
+        padding: ($padding-default / 2) 0;
+        font-size: 12px;
+    }
+}

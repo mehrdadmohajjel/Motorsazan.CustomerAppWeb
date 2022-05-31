@@ -1,0 +1,131 @@
+﻿.content-modal {
+    align-items: center;
+    background: rgba(0,0,0,0.4);
+    display: flex;
+    height: 0;
+    justify-content: center;
+    opacity: 0;
+    overflow: hidden;
+    overscroll-behavior: contain;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transition: opacity ease-in 0.2s;
+    width: 0;
+    z-index: -100000;
+
+    @include bem-m("active") {
+        bottom: 0;
+        height: 100%;
+        left: 0;
+        opacity: 1;
+        width: 100%;
+        z-index: $content-modal-zindex;
+    }
+
+
+    $header-height: 42px;
+
+    @include bem-e("form") {
+        background: $color-white;
+        box-shadow: 0 0 4px rgba(0,0,0,.26);
+        margin: 0 auto;
+        max-width: 768px;
+        min-height: 200px;
+        max-height: 90%;
+        padding: 0;
+        padding-top: em($header-height);
+        position: relative;
+        text-align: center;
+        width: 90%;
+
+        @include bem-m("mini") {
+            max-width: 500px;
+        }
+
+        @include bem-m("medium") {
+            max-width: 960px;
+            min-height: 640px
+        }
+    }
+
+    @include bem-e("header") {
+        $header-font-size: 12px;
+
+        background: $color-primary;
+        color: $color-white;
+        font-size: em($header-font-size);
+        font-weight: bold;
+        height: em($header-height, $header-font-size);
+        line-height: em($header-height, $header-font-size);
+        padding: 0 em($padding-default, $header-font-size);
+        position: absolute;
+        right: 0;
+        text-align: center;
+        top: 0;
+        width: 100%;
+    }
+
+    @include bem-e("header-btn") {
+        $btn-font-size: 16px;
+        $btn-size: $header-height - 16;
+
+        background-color: $color-text;
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        color: $color-white;
+        cursor: pointer;
+        font-size: $btn-font-size;
+        font-weight: bold;
+        height: $btn-size;
+        line-height: $btn-size;
+        outline: none;
+        padding: 0;
+        padding-top: 1px;
+        position: absolute;
+        right: 7px;
+        top: 8px;
+        text-align: center;
+        width: $btn-size;
+
+        @include bem-e("icon") {
+            margin-top: -3px;
+            width: 10px;
+        }
+
+        @include bem-m("maximize") {
+            right: $btn-size + 14;
+        }
+
+        &:hover {
+            background-color: $color-danger--dark;
+        }
+    }
+
+    @include bem-e("body") {
+        height: 100%;
+        padding: $padding-default;
+    }
+
+    @include bem-m("maximize") {
+        .content-modal__form {
+            bottom: 0;
+            left: 0;
+            height: 100%;
+            max-height: 100%;
+            max-width: 100%;
+            position: fixed;
+            right: 0;
+            top: 0;
+            width: 100%;
+            z-index: 1;
+        }
+
+        .content-modal__header {
+            position: fixed;
+            right: 0;
+            top: 0;
+            width: 100%;
+            z-index: 2;
+        }
+    }
+}

@@ -1,0 +1,95 @@
+﻿.dxeTextBox_MaterialCompact {
+    width: 100%;
+
+    tbody,
+    tr,
+    td {
+        width: 100% !important;
+    }
+}
+
+.dxbButton_MaterialCompact {
+    font-size: 12px !important;
+    font-weight: normal !important;
+}
+
+.dxeEditArea_MaterialCompact {
+    font-size: 13px !important;
+    font-weight: normal !important;
+}
+
+.dxeBase_MaterialCompact {
+    font-size: 13px;
+}
+
+.dxbButton_MaterialCompact {
+    opacity: 0.9;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.dxgvHeader_MaterialCompact {
+    font-size: 13px;
+}
+
+.dxeListBox_MaterialCompact,
+.dxgvCommandColumn_MaterialCompact,
+.dxgvEmptyDataRow_MaterialCompact,
+.dxgv {
+    font-size: 14px;
+}
+
+.dxeMemoEditArea_MaterialCompact {
+    font-size: 12px;
+    min-height: 180px;
+}
+.dxeMemo_MaterialCompact,
+.dxeButtonEdit_MaterialCompact {
+    width: 100%;
+}
+
+.dxeButtonEdit_MaterialCompact td.dxic {
+    padding: 6.5px !important;
+}
+.dxgvSearchPanel_MaterialCompact .dxeButtonEdit_MaterialCompact {
+    box-shadow: none !important;
+}
+
+.dxeDisabled_MaterialCompact {
+    background: $color-border !important;
+    color: #676464 !important;
+}
+
+.dxgvControl_MaterialCompact .dxgvTable_MaterialCompact .dxgvFocusedRow_MaterialCompact {
+    background-color: #9fa1a2;
+}
+
+.dxeRadioButtonList_MaterialCompact { 
+    /*border: none !important;*/
+    width: 100%;
+}
+
+.dxeRadioButtonList_MaterialCompact td.dxe, .dxeCheckBoxList_MaterialCompact td.dxe {
+    padding: 0 !important;
+}
+
+.dxbButton_MaterialCompact.dxb-danger.dxbDisabled_MaterialCompact,
+.dxbButton_MaterialCompact.dxbDisabled_MaterialCompact,
+.dxbButton_MaterialCompact.dxb-outline.dxbDisabled_MaterialCompact,
+.dxbButton_MaterialCompact.dxbDisabled_MaterialCompact {
+    border-color: #DDDDDD !important;
+    background-color: #DDDDDD !important;
+    color: #A2A2A2 !important;
+    cursor: not-allowed !important;
+}
+
+.a.dxbButtonSys {
+    background-color: transparent !important;
+    text-decoration: underline;
+}
+
+.dxpLite_MaterialCompact .dxp-num {
+    border-radius: 4px !important;
+}

@@ -1,0 +1,447 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CB7218E9-3FF2-49F2-8745-4DD021AB9619}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Motorsazan.CustomerAppWeb.Client</RootNamespace>
+    <AssemblyName>Motorsazan.CustomerAppWeb.Client</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress>true</Use64BitIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <UpgradeBackupLocation />
+    <TypeScriptToolsVersion>2.5</TypeScriptToolsVersion>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Elasticsearch.Net, Version=7.0.0.0, Culture=neutral, PublicKeyToken=96c599bbe3e70f5d, processorArchitecture=MSIL">
+      <HintPath>..\packages\Elasticsearch.Net.7.16.0\lib\net461\Elasticsearch.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.4.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.4.2\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.SystemWeb, Version=2.4.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.SystemWeb.2.4.2\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.2.0.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.2.0.0\lib\netstandard2.0\Microsoft.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.2.0.0\lib\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.2.0.0\lib\netstandard2.0\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.2.0.0\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.2.10.0\lib\net46\Serilog.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Enrichers.Environment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Enrichers.Environment.2.2.0\lib\net45\Serilog.Enrichers.Environment.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Extensions.Logging, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Extensions.Logging.3.1.0\lib\netstandard2.0\Serilog.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Formatting.Compact, Version=1.1.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Formatting.Compact.1.1.0\lib\net452\Serilog.Formatting.Compact.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Formatting.Elasticsearch, Version=0.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Formatting.Elasticsearch.8.4.1\lib\net45\Serilog.Formatting.Elasticsearch.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Sinks.Debug, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Sinks.Debug.2.0.0\lib\net46\Serilog.Sinks.Debug.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Sinks.Elasticsearch, Version=8.4.1.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Sinks.Elasticsearch.8.4.1\lib\net461\Serilog.Sinks.Elasticsearch.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Sinks.File, Version=5.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Sinks.File.5.0.0\lib\net45\Serilog.Sinks.File.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Sinks.PeriodicBatching, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Sinks.PeriodicBatching.2.3.0\lib\net45\Serilog.Sinks.PeriodicBatching.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.5.0.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="DevExpress.Data.v18.2, Version=18.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.ASPxThemes.v18.2, Version=18.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v18.2.Core, Version=18.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v18.2.Export, Version=18.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v18.2.Core, Version=18.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.v18.2, Version=18.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.Mvc5.v18.2, Version=18.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v18.2.Core, Version=18.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.ASPxScheduler.v18.2, Version=18.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Charts.v18.2.Core, Version=18.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v18.2, Version=18.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v18.2.Web, Version=18.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.Resources.v18.2, Version=18.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v18.2, Version=18.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v18.2.Web, Version=18.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v18.2.Web.WebForms, Version=18.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v18.2.Core, Version=18.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.CodeParser.v18.2, Version=18.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.DataAccess.v18.2, Version=18.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v18.2.Core, Version=18.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.PivotGrid.v18.2.Core, Version=18.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v18.2.Core, Version=18.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v18.2, Version=18.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGauges.v18.2.Core, Version=18.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.ASPxTreeList.v18.2, Version=18.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebMatrix.Data, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.3.2.7\lib\net45\WebMatrix.Data.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Client\DevExpressIntellisense\ASPxScriptIntelliSense.js" />
+    <Content Include="Client\DevExpressIntellisense\devexpress-aspnetcore-bootstrap.d.ts" />
+    <Content Include="Client\DevExpressIntellisense\devexpress-web.d.ts" />
+    <Content Include="Client\DevExpressIntellisense\jquery.d.ts" />
+    <Content Include="Client\DevExpressIntellisense\knockout.d.ts" />
+    <Content Include="Client\Dist\Css\PanelLayout.css" />
+    <Content Include="Client\Dist\Css\PanelLayout.min.css">
+      <DependentUpon>PanelLayout.css</DependentUpon>
+    </Content>
+    <Content Include="Client\Images\cancel.svg" />
+    <Content Include="Client\Images\checked.svg" />
+    <Content Include="Client\Images\icon__boss--white.svg" />
+    <Content Include="Client\Images\icon__chat--white.svg" />
+    <Content Include="Client\Images\icon__clock--white.svg" />
+    <Content Include="Client\Images\icon__cms--white.svg" />
+    <Content Include="Client\Images\icon__cost--white.svg" />
+    <Content Include="Client\Images\icon__employee-evaluation--white.svg" />
+    <Content Include="Client\Images\icon__gear--white.svg" />
+    <Content Include="Client\Images\icon__grid--white.svg" />
+    <Content Include="Client\Images\icon__list--white.svg" />
+    <Content Include="Client\Images\icon__machine-stop--white.svg" />
+    <Content Include="Client\Images\icon__money--white.svg" />
+    <Content Include="Client\Images\icon__motor--white.svg" />
+    <Content Include="Client\Images\icon__pay--white.svg" />
+    <Content Include="Client\Images\icon__project--white.svg" />
+    <Content Include="Client\Images\icon__recommend--white.svg" />
+    <Content Include="Client\Images\icon__repair--white.svg" />
+    <Content Include="Client\Images\icon__shop--white.svg" />
+    <Content Include="Client\Images\icon__stamp--white.svg" />
+    <Content Include="Client\Images\icon__strategy--white.svg" />
+    <Content Include="Client\Images\logo--primary.png" />
+    <Content Include="Client\Images\logo--white.png" />
+    <Content Include="Client\Images\logo__circle--primary.png" />
+    <Content Include="Client\Images\maximize.svg" />
+    <Content Include="Client\Images\minimize.svg" />
+    <Content Include="Client\Images\open-menu.svg" />
+    <Content Include="Client\Images\profile--empty.png" />
+    <Content Include="Client\Images\warning.svg" />
+    <Content Include="Client\Images\window.svg" />
+    <Content Include="Client\Src\Js\Dependencies\Bootstrap\_Bootstrap.js" />
+    <Content Include="Client\Src\Js\Dependencies\DatePicker\_Calendar.js" />
+    <Content Include="Client\Src\Js\Dependencies\DatePicker\_PersianDateTimePicker.js" />
+    <Content Include="Client\Src\Js\Utilites\Connector.js" />
+    <Content Include="Client\Src\Js\Utilites\Tools.js" />
+    <Content Include="Client\Src\Js\Views\Shared\Components\_Uploader.js" />
+    <Content Include="Client\Src\Js\Views\Shared\Partials\_AppSections.js" />
+    <Content Include="Client\Src\Js\Views\Shared\Partials\_Authentication.js" />
+    <Content Include="Client\Src\Js\Views\Shared\Partials\_ContentModal.js" />
+    <Content Include="Client\Src\Js\Views\Shared\Partials\_LoadingModal.js" />
+    <Content Include="Client\Src\Js\Views\Shared\Partials\_MessageModal.js" />
+    <Content Include="Client\Src\Js\Views\Shared\Partials\_NavigationBar.js" />
+    <Content Include="Client\Src\Js\Views\Shared\Partials\_ShortcutBar.js" />
+    <None Include=".editorconfig" />
+    <Content Include="Favicon.png" />
+    <Content Include="Global.asax" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Client\Images\icon__production--white.svg" />
+    <Content Include="Views\Home\Css\Index.css" />
+    <Content Include="Views\Home\Css\Index.min.css" />
+    <Content Include="Views\NotificationSlider\Css\Index.css" />
+    <Content Include="Views\NotificationSlider\Css\Index.min.css" />
+    <Content Include="Views\NotificationSlider\Js\Index.js" />
+    <Content Include="Views\ProductManagement\Css\Index.css" />
+    <Content Include="Views\ProductManagement\Css\Index.min.css" />
+    <Content Include="Views\ProductManagement\Js\Index.js" />
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Partials\_AppSectionSettings.cshtml" />
+    <Content Include="Views\Shared\Partials\_LoginModal.cshtml" />
+    <Content Include="Views\Shared\Partials\_Profile.cshtml" />
+    <Content Include="Views\Shared\Partials\_CommonClientResources.cshtml" />
+    <Content Include="Views\Shared\Partials\_DevexpressClient.cshtml" />
+    <Content Include="Views\Shared\Partials\_LoadingModal.cshtml" />
+    <Content Include="Views\Shared\Partials\_MessageModal.cshtml" />
+    <Content Include="Views\Shared\Partials\_NavigationBar.cshtml" />
+    <Content Include="Views\Shared\Partials\_NavigationMenuList.cshtml" />
+    <Content Include="Views\Shared\Partials\_ShortcutBar.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\Forbidden.cshtml" />
+    <Content Include="Client\Src\Scss\Dependencies\Bootstrap\_Bootstrap.scss" />
+    <Content Include="Client\Src\Scss\Dependencies\DatePicker\_PersianDateTimePicker.scss" />
+    <Content Include="Client\Src\Scss\Dependencies\DevExpress\_Override.scss" />
+    <Content Include="Client\Src\Scss\Dependencies\Fonts\Shabnam\_Index.scss" />
+    <Content Include="Client\Src\Scss\Dependencies\Fonts\_index.scss" />
+    <Content Include="Client\Src\Scss\Dependencies\Form\_index.scss" />
+    <Content Include="Client\Src\Scss\Utilities\_Functions.scss" />
+    <Content Include="Client\Src\Scss\Utilities\_Index.scss" />
+    <Content Include="Client\Src\Scss\Utilities\_Mixins.scss" />
+    <Content Include="Client\Src\Scss\Utilities\_Variabels.scss" />
+    <Content Include="Client\Src\Scss\Views\Shared\Components\Uploader.scss" />
+    <Content Include="Client\Src\Scss\Views\Shared\PanelLayout.scss" />
+    <Content Include="Client\Src\Scss\Views\Shared\Partials\_AppBase.scss" />
+    <Content Include="Client\Src\Scss\Views\Shared\Partials\_Authentication.scss" />
+    <Content Include="Client\Src\Scss\Views\Shared\Partials\_ContentModal.scss" />
+    <Content Include="Client\Src\Scss\Views\Shared\Partials\_LoadingModal.scss" />
+    <Content Include="Client\Src\Scss\Views\Shared\Partials\_MessageModal.scss" />
+    <Content Include="Client\Src\Scss\Views\Shared\Partials\_NavigationBar.scss" />
+    <Content Include="Client\Src\Scss\Views\Shared\Partials\_ShortcutBar.scss" />
+    <Content Include="Fonts\Shabnam-Bold-FD.eot" />
+    <Content Include="Fonts\Shabnam-Bold-FD.ttf" />
+    <Content Include="Fonts\Shabnam-Bold-FD.woff" />
+    <Content Include="Fonts\Shabnam-Bold-FD.woff2" />
+    <Content Include="Fonts\Shabnam-FD.eot" />
+    <Content Include="Fonts\Shabnam-FD.ttf" />
+    <Content Include="Fonts\Shabnam-FD.woff" />
+    <Content Include="Fonts\Shabnam-FD.woff2" />
+    <Content Include="Fonts\Shabnam-Light-FD.eot" />
+    <Content Include="Fonts\Shabnam-Light-FD.ttf" />
+    <Content Include="Fonts\Shabnam-Light-FD.woff" />
+    <Content Include="Fonts\Shabnam-Light-FD.woff2" />
+    <Content Include="Fonts\Shabnam-Medium-FD.eot" />
+    <Content Include="Fonts\Shabnam-Medium-FD.ttf" />
+    <Content Include="Fonts\Shabnam-Medium-FD.woff" />
+    <Content Include="Fonts\Shabnam-Medium-FD.woff2" />
+    <Content Include="Fonts\Shabnam-Thin-FD.eot" />
+    <Content Include="Fonts\Shabnam-Thin-FD.ttf" />
+    <Content Include="Fonts\Shabnam-Thin-FD.woff" />
+    <Content Include="Fonts\Shabnam-Thin-FD.woff2" />
+    <None Include="compilerconfig.json" />
+    <None Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <Content Include="Views\ProductManagement\AddForm\AddForm.cshtml" />
+    <Content Include="Views\ProductManagement\AddForm\AddFormProductCategoryCombo.cshtml" />
+    <Content Include="Views\ProductManagement\Css\Index.scss" />
+    <Content Include="Views\ProductManagement\FilterForm\FilterForm.cshtml" />
+    <Content Include="Views\ProductManagement\FilterForm\FilterFormDateTypeCombo.cshtml" />
+    <Content Include="Views\ProductManagement\FilterForm\FilterFormStatusTypeCombo.cshtml" />
+    <Content Include="Views\ProductManagement\Grid\ProductManagementGrid.cshtml" />
+    <Content Include="Views\ProductManagement\Index.cshtml" />
+    <Content Include="Views\ProductManagement\AddForm\AddProductImagePartial.cshtml" />
+    <Content Include="Views\ProductManagement\AddForm\AddProductCatalogPartial.cshtml" />
+    <Content Include="Views\Home\Css\Index.scss" />
+    <Content Include="Views\NotificationSlider\AddForm\AddForm.cshtml" />
+    <Content Include="Views\NotificationSlider\AddForm\AddProductImagePartial.cshtml" />
+    <Content Include="Views\NotificationSlider\Css\Index.scss" />
+    <Content Include="Views\NotificationSlider\FilterForm\FilterForm.cshtml" />
+    <Content Include="Views\NotificationSlider\FilterForm\FilterFormDateTypeCombo.cshtml" />
+    <Content Include="Views\NotificationSlider\FilterForm\FilterFormStatusTypeCombo.cshtml" />
+    <Content Include="Views\NotificationSlider\Grid\NotificationSliderGrid.cshtml" />
+    <Content Include="Views\NotificationSlider\Index.cshtml" />
+    <Content Include="Views\NotificationSlider\AddForm\ImageUploader.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Api\ApiConnector.cs" />
+    <Compile Include="Api\ApiList.cs" />
+    <Compile Include="Api\NotificationSlider.cs" />
+    <Compile Include="Api\ProductManagement.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\JsonResultFilter.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\UnhandledExceptionFilter.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NotificationSliderController.cs" />
+    <Compile Include="Controllers\ProductManagementController.cs" />
+    <Compile Include="Filters\AccessToEventValidationAttribute.cs" />
+    <Compile Include="Filters\AccessToFormValidationAttribute.cs" />
+    <Compile Include="Filters\ExceptionHandlerFilter.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\Log.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <!--<TypeScriptCompile Include="Client\DevExpressIntellisense\devexpress-aspnetcore-bootstrap.d.ts" />
+    <TypeScriptCompile Include="Client\DevExpressIntellisense\devexpress-web.d.ts" />
+    <TypeScriptCompile Include="Client\DevExpressIntellisense\jquery.d.ts" />
+    <TypeScriptCompile Include="Client\DevExpressIntellisense\knockout.d.ts" />-->
+    <Folder Include="FileBank\NotificationSlider\" />
+    <Folder Include="FileBank\Production\Catalog\" />
+    <Folder Include="FileBank\Production\Images\" />
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Motorsazan.CustomerAppInterface.Shared\Motorsazan.CustomerAppInterface.Shared.csproj">
+      <Project>{a6d6b5b4-e1d3-4805-961e-074ec5fb3647}</Project>
+      <Name>Motorsazan.CustomerAppInterface.Shared</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Motorsazan.CustomerAppWeb.Shared\Motorsazan.CustomerAppWeb.Shared.csproj">
+      <Project>{d4fe72a2-31cd-490c-b263-3716fbce9b7d}</Project>
+      <Name>Motorsazan.CustomerAppWeb.Shared</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50534</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:5555/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

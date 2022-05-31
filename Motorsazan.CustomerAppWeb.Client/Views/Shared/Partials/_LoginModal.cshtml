@@ -1,0 +1,51 @@
+﻿<div class="login__modal" id="loginModal">
+    <div class="login__form">
+        <h2 class="login__title">
+            تایید هویت
+        </h2>
+        <div class="login__descriotion">
+            همکار گرامی، به دلیل اتمام زمان استاندارد استفاده از سامانه و افزایش امنیت، نیاز به تایید مجدد اطلاعات هویتی شما می باشد.
+        </div>
+        <div class="app__form-item">
+            <label class="app__form-label">
+                نام کاربری
+            </label>
+            @Html.DevExpress().TextBox(settings =>
+             {
+                 settings.Name = "loginModalUserNameInput";
+                 settings.Properties.NullText = "نام کاربری خود را وارد نمایید";
+             }).GetHtml()
+            <div class="app__form-error app__hide" id="loginModalUserNameInputError">
+                نام کاربری وارد نشده است
+            </div>
+        </div>
+        <div class="app__form-item">
+            <label class="app__form-label">
+                رمز ورود
+            </label>
+            @Html.DevExpress().TextBox(settings =>
+            {
+                settings.Name = "loginModalPasswordInput";
+                settings.Properties.NullText = "رمز ورود خود را وارد نمایید";
+                settings.Properties.Password = true;
+            }).GetHtml()
+            <div class="app__form-error app__hide" id="loginModalPasswordInputError">
+                رمز عبور وارد نشده است
+            </div>
+        </div>
+        <div class="app__form-error app__hide" id="loginModalWrongCredentialsError">
+            نام کاربری یا کلمه عبور وارد شده صحیح نمی باشد
+        </div>
+        <div class="login__action-wrapper">
+
+            @Html.DevExpress().Button(settings =>
+            {
+                settings.Name = "loginModalDoLoginBtn";
+                settings.UseSubmitBehavior = true;
+                settings.Text = "تایید اطلاعات کاربری";
+                settings.ControlStyle.CssClass = "login__action-btn";
+            }).GetHtml()
+
+        </div>
+    </div>
+</div>

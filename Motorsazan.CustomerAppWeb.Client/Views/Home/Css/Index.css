@@ -1,0 +1,37 @@
+﻿.home {
+  margin: 0 auto;
+  max-width: 960px;
+  text-align: center; }
+  .home__link {
+    border-radius: 4px;
+    color: #ffffff;
+    display: block;
+    font-size: 14px;
+    margin-bottom: 15px;
+    padding: 16px;
+    text-decoration: none;
+    width: 100%; }
+    .home__link__icon {
+      display: block;
+      margin: 0 auto;
+      margin-bottom: 15px;
+      max-width: 60px; }
+    .home__link:hover {
+      color: #ffffff;
+      text-decoration: none; }
+    .home__link--success {
+      background: #35B86B; }
+      .home__link--success:hover {
+        background: #247d48; }
+    .home__link--info {
+      background: #03a9f4; }
+      .home__link--info:hover {
+        background: #0275a8; }
+    .home__link--danger {
+      background: #f44336; }
+      .home__link--danger:hover {
+        background: #d2190b; }
+    .home__link--warning {
+      background: #ff9800; }
+      .home__link--warning:hover {
+        background: #b36a00; }

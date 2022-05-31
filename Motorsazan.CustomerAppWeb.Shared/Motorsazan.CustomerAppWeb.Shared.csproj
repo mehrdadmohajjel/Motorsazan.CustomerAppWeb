@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D4FE72A2-31CD-490C-B263-3716FBCE9B7D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Motorsazan.CustomerAppWeb.Shared</RootNamespace>
+    <AssemblyName>Motorsazan.CustomerAppWeb.Shared</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Web.v18.2, Version=18.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Persia, Version=3.0.4727.38582, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Persia.NET.3.0.4727\lib\Persia.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Attributes\IgnoreInStoredProcedureParametersAttribute.cs" />
+    <Compile Include="Attributes\IgnoreInStoredProcedureOutputAttribute.cs" />
+    <Compile Include="Attributes\StoredProcedureParameterAttribute.cs" />
+    <Compile Include="Connected Services\AuthService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ApiModels\Output\CheckEventAccess.cs" />
+    <Compile Include="Models\ApiModels\Output\CheckFormAccess.cs" />
+    <Compile Include="Models\ApiModels\Output\Status.cs" />
+    <Compile Include="Models\ApiModels\Output\User.cs" />
+    <Compile Include="Models\ApiModels\Output\UserInformation.cs" />
+    <Compile Include="Models\ApiModels\Output\UserLoginInfo.cs" />
+    <Compile Include="Models\Base\AlertException.cs" />
+    <Compile Include="Models\Base\DataBaseMessage.cs" />
+    <Compile Include="Models\Base\LoginException.cs" />
+    <Compile Include="Models\Base\Password.cs" />
+    <Compile Include="Models\Base\Reason.cs" />
+    <Compile Include="Models\Base\User.cs" />
+    <Compile Include="Models\Base\Validation.cs" />
+    <Compile Include="Models\Base\WebServiceResult.cs" />
+    <Compile Include="Models\DomainModels\Tbl_FileDetail.cs" />
+    <Compile Include="Models\DomainModels\Tbl_User.cs" />
+    <Compile Include="Models\Input\NotificationSlider\InputAddImageToNotificationSlider.cs" />
+    <Compile Include="Models\Input\NotificationSlider\InputAddNotificationSlider.cs" />
+    <Compile Include="Models\Input\NotificationSlider\InputEditNotificationSlider.cs" />
+    <Compile Include="Models\Input\NotificationSlider\InputGetNotificationSliderAttachmentFileByFileName.cs" />
+    <Compile Include="Models\Input\NotificationSlider\InputGetNotificationSliderListByCondition.cs" />
+    <Compile Include="Models\Input\NotificationSlider\InputGetNotificationSliderListByNotificationSliderId.cs" />
+    <Compile Include="Models\Input\NotificationSlider\InputRemoveNotificationSliderByNotificationSliderId.cs" />
+    <Compile Include="Models\Input\ProductManagement\InputAddCatalogToProduction.cs" />
+    <Compile Include="Models\Input\ProductManagement\InputAddImageToProduction.cs" />
+    <Compile Include="Models\Input\ProductManagement\InputAddProduct.cs" />
+    <Compile Include="Models\Input\ProductManagement\InputGetProductionAttachmentFileByProductionId.cs" />
+    <Compile Include="Models\Input\ProductManagement\InputGetProductionCatalogAttachmentFileByProductionId.cs" />
+    <Compile Include="Models\Input\ProductManagement\InputGetProductionListByProductCategoryId.cs" />
+    <Compile Include="Models\Input\ProductManagement\InputRemoveProductionByProductionId.cs" />
+    <Compile Include="Models\Output\NotificationSlider\OutputGetLastNews.cs" />
+    <Compile Include="Models\Output\NotificationSlider\OutputGetNotificationSliderAttachmentFileByFileName.cs" />
+    <Compile Include="Models\Output\NotificationSlider\OutputGetNotificationSliderListByCondition.cs" />
+    <Compile Include="Models\Output\NotificationSlider\OutputGetNotificationSliderListByNotificationSliderId.cs" />
+    <Compile Include="Models\Output\ProductManagement\OutputGetProductCategoryList.cs" />
+    <Compile Include="Models\Output\ProductManagement\OutputGetProductionAttachmentFileByProductionId.cs" />
+    <Compile Include="Models\Output\ProductManagement\OutputGetProductionCatalogAttachmentFileByProductionId.cs" />
+    <Compile Include="Models\Output\ProductManagement\OutputGetProductionListByProductCategoryId.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\Converter.cs" />
+    <Compile Include="Enums\DatePeriodType.cs" />
+    <Compile Include="Utilities\Settings.cs" />
+    <Compile Include="Utilities\Tools.cs" />
+    <Compile Include="Utilities\UserTools.cs" />
+    <Compile Include="Utilities\WebApiConsumer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Connected Services\AuthService\App.wsdl" />
+    <None Include="Connected Services\AuthService\App.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\AuthService\App1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\AuthService\App2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\AuthService\App3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\AuthService\Motorsazan.CustomerAppWeb.Shared.AuthService.WebServiceOutputCreateSession.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\AuthService\Motorsazan.CustomerAppWeb.Shared.AuthService.WebServiceOutputGetEndUserInfoByJsonWebToken.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\AuthService\Motorsazan.CustomerAppWeb.Shared.AuthService.WebServiceOutputReportEndUserLoginInfoByJsonWebToken.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\AuthService\Motorsazan.CustomerAppWeb.Shared.AuthService.WebServiceOutputValidateSessionByJsonWebToken.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <!-- <None Include="Connected Services\AuthService\Motorsazan.CustomerAppInterface.Shared.AuthService.WebServiceOutputCreateSession.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\AuthService\Motorsazan.CustomerAppInterface.Shared.AuthService.WebServiceOutputGetEndUserInfoByJsonWebToken.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\AuthService\Motorsazan.CustomerAppInterface.Shared.AuthService.WebServiceOutputReportEndUserLoginInfoByJsonWebToken.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\AuthService\Motorsazan.CustomerAppInterface.Shared.AuthService.WebServiceOutputValidateSessionByJsonWebToken.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None> -->
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\AuthService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\AuthService\App.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\AuthService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\AuthService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\AuthService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\ApiModels\Input\" />
+    <Folder Include="Models\ViewModels\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

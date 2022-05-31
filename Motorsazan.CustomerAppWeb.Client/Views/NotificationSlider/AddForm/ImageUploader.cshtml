@@ -1,0 +1,18 @@
+﻿
+        @Html.DevExpress().UploadControl(
+            settings => {
+                            settings.Name = "ucMultiSelection";
+                            settings.CallbackRouteValues = new { Controller = "NotificationSlider", Action = "ImageUploader" };
+
+                            settings.Width = Unit.Percentage(100);
+                            settings.ShowProgressPanel = true;
+                            settings.ShowUploadButton = true;
+                            settings.AdvancedModeSettings.EnableMultiSelect = false;
+                            settings.AdvancedModeSettings.EnableFileList = true;
+                            settings.AdvancedModeSettings.EnableDragAndDrop = true;
+                            settings.NullText = "لطفا فایل را انتخاب کنید...";
+
+                            settings.ClientSideEvents.FilesUploadStart = "motorsazanClient.notificationSlider.clearUploader";
+                                                                        
+                            settings.ClientSideEvents.FileUploadComplete = "motorsazanClient.notificationSlider.onFileUploadComplete";
+            }).GetHtml()

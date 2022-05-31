@@ -1,0 +1,36 @@
+﻿@import "../../../Client/Src/Scss/Utilities/Variabels";
+
+.supermarket {
+
+    &__detail {
+        border: 1px solid $color-gray;
+        font-size: 13px;
+        margin: 0 auto;
+        max-width: 700px;
+        overflow: hidden;
+        text-align: right;
+
+        &__title {
+            background: $color-border;
+            display: inline-block;
+            font-size: 12px;
+            font-weight: bold;
+            margin-left: 10px;
+            padding: 8px;
+            vertical-align: middle;
+            width: 180px;
+        }
+
+        .row {
+            border-bottom: 1px solid $color-gray;
+        }
+        .row:last-child {
+            border-bottom: none;
+        }
+    }
+}
+.content-modal__form {
+    min-width: 450px !important;
+    max-width: 570px !important;
+    min-height: 120px !important;
+}

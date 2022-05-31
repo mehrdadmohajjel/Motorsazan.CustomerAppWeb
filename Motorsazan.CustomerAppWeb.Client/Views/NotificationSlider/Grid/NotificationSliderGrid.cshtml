@@ -1,0 +1,202 @@
+﻿@using System.Drawing
+@using DevExpress.XtraExport.Helpers
+@model  IEnumerable< Motorsazan.CustomerAppWeb.Shared.Models.Output.NotificationSlider.OutputGetNotificationSliderListByCondition>
+
+@Html.DevExpress().GridView(settings =>
+{
+    settings.Name = "grid";
+    settings.CallbackRouteValues = new { Controller = "NotificationSlider", Action = "NotificationSliderGrid" };
+    settings.ClientSideEvents.BeginCallback =
+        "motorsazanClient.notificationSlider.handleNotificationSliderGridCallbackUrl";
+
+    settings.Width = Unit.Percentage(100);
+
+    settings.Settings.ShowFilterRow = false;
+    settings.Settings.ShowFilterRowMenu = false;
+    settings.SettingsBehavior.AllowFocusedRow = true;
+    settings.SettingsBehavior.AllowSelectByRowClick = true;
+    settings.SettingsBehavior.AllowSelectSingleRowOnly = true;
+    settings.SettingsDetail.AllowOnlyOneMasterRowExpanded = true;
+
+    settings.EnableRowsCache = true;
+
+    settings.KeyFieldName = "NotificationSliderId";
+    settings.Columns.Add(column =>
+    {
+        column.FieldName = "RowIndex";
+        column.Caption = "ردیف";
+        column.Width = Unit.Pixel(60);
+        column.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+        settings.CustomUnboundColumnData = (s, e) =>
+        {
+            if (e.Column.FieldName == "RowIndex")
+                e.Value = e.ListSourceRowIndex + 1;
+        };
+    });
+
+
+    settings.Columns.AddBand(band =>
+    {
+        band.Caption = "مشخصات اعلان ";
+        band.HeaderStyle.VerticalAlign = VerticalAlign.Middle;
+        band.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
+        band.Columns.Add(column =>
+        {
+            column.FieldName = "Topic";
+            column.Caption = "موضوع اعلان";
+            column.HeaderStyle.VerticalAlign = VerticalAlign.Middle;
+            column.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
+            column.CellStyle.VerticalAlign = VerticalAlign.Middle;
+            column.CellStyle.HorizontalAlign = HorizontalAlign.Center;
+            column.HeaderStyle.Wrap = DefaultBoolean.True;
+
+        });
+
+        band.Columns.Add(column =>
+        {
+            column.FieldName = "NewsText";
+            column.Caption = "متن اعلان";
+            column.HeaderStyle.VerticalAlign = VerticalAlign.Middle;
+            column.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
+            column.CellStyle.VerticalAlign = VerticalAlign.Middle;
+            column.CellStyle.HorizontalAlign = HorizontalAlign.Center;
+            column.CellStyle.Wrap = DefaultBoolean.True;
+            column.HeaderStyle.Wrap = DefaultBoolean.True;
+        });
+
+
+    });
+
+    settings.Columns.AddBand(band =>
+    {
+        band.Caption = "بازه نمایش ";
+        band.HeaderStyle.VerticalAlign = VerticalAlign.Middle;
+        band.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
+
+        band.Columns.Add(column =>
+        {
+            column.FieldName = "PersianShowDateTime";
+            column.Caption = "از تاریخ";
+            column.HeaderStyle.VerticalAlign = VerticalAlign.Middle;
+            column.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
+            column.CellStyle.VerticalAlign = VerticalAlign.Middle;
+            column.CellStyle.HorizontalAlign = HorizontalAlign.Center;
+        });
+        band.Columns.Add(column =>
+        {
+            column.FieldName = "PersianEndShowDateTime";
+            column.Caption = "تا تاریخ";
+            column.CellStyle.Wrap = DefaultBoolean.True;
+            column.HeaderStyle.VerticalAlign = VerticalAlign.Middle;
+            column.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
+            column.CellStyle.VerticalAlign = VerticalAlign.Middle;
+            column.CellStyle.HorizontalAlign = HorizontalAlign.Center;
+        });
+
+
+    });
+    settings.Columns.Add(column =>
+    {
+        column.FieldName = "UserName";
+        column.Caption = "نویسنده";
+    });
+    settings.Columns.Add(column =>
+    {
+
+        column.FieldName = "ImageName";
+        column.Visible = false;
+    });
+    //settings.Columns.Add(column =>
+    //{
+
+    //    column.FieldName = "FileStream";
+    //    column.Visible = false;
+    //});
+
+    settings.Columns.Add(c =>
+    {
+        c.FieldName = "ImageName";
+        c.Caption = "تصویر";
+        c.SetDataItemTemplateContent(t =>
+        {
+            Html.DevExpress().Image(labelSettings =>
+            {
+                labelSettings.ImageUrl = "~/FileBank/NotificationSlider/" + (String)DataBinder.Eval(t.DataItem, "ImageName");
+                labelSettings.Width = Unit.Pixel(150);
+                labelSettings.Height = Unit.Pixel(150);
+            }).GetHtml();
+        });
+    });
+
+    //settings.Columns.Add(column =>
+    //{
+    //    column.Caption = "تصویر";
+    //    column.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
+    //    column.ColumnType = MVCxGridViewColumnType.BinaryImage;
+    //    column.FieldName = "ImageBinary";
+    //    column.EditorProperties().BinaryImage(biProperties => {
+    //        biProperties.ImageWidth = 180;
+    //        biProperties.ImageHeight = 130;
+    //    });
+
+
+    //});
+
+
+    settings.CustomButtonInitialize = (sender, e) =>
+    {
+        var grid = sender as MVCxGridView;
+        var imageName = (string)grid.GetRowValues(e.VisibleIndex, "ImageName");
+        if (string.IsNullOrEmpty((string)grid.GetRowValues(e.VisibleIndex, "ImageName")))
+        {
+            if (e.ButtonID == "getUploadedMachineDocumentMemberBtn")
+            {
+                e.Enabled = false;
+            }
+
+        }
+
+    };
+
+    settings.CommandColumn.Visible = true;
+    settings.CommandColumn.ShowDeleteButton = false;
+    settings.CommandColumn.ShowEditButton = false;
+    settings.CommandColumn.ShowNewButton = false;
+    settings.CommandColumn.ShowNewButtonInHeader = false;
+    settings.CommandColumn.Caption = "عملیات";
+    settings.CommandColumn.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
+
+    settings.CommandColumn.ButtonRenderMode = GridCommandButtonRenderMode.Button;
+    settings.CommandColumn.VisibleIndex = 1000;
+    settings.ClientSideEvents.CustomButtonClick = "motorsazanClient.notificationSlider.handleGridCustomBtnClick";
+
+    var editTopicCustomBtn = new GridViewCommandColumnCustomButton() { ID = "editTopicBTN", Text = "ویرایش اعلان" };
+    editTopicCustomBtn.Styles.Style.CssClass = "app__form-grid-mini-btn";
+    editTopicCustomBtn.Styles.Style.BackColor = Color.Red;
+    settings.CommandColumn.CustomButtons.Add(editTopicCustomBtn);
+
+    var removeTopicCustomBtn = new GridViewCommandColumnCustomButton() { ID = "removeTopicBTN", Text = "حذف اعلان" };
+    removeTopicCustomBtn.Styles.Style.CssClass = "app__form-grid-mini-btn";
+    removeTopicCustomBtn.Styles.Style.BackColor = Color.Red;
+    settings.CommandColumn.CustomButtons.Add(removeTopicCustomBtn);
+
+
+    settings.SettingsExport.EnableClientSideExportAPI = true;
+    settings.SettingsExport.ExcelExportMode = DevExpress.Export.ExportType.WYSIWYG;
+    settings.Toolbars.Add(t =>
+    {
+        t.Items.Add(GridViewToolbarCommand.ExportToXlsx).Text = "خروجی اکسل";
+    });
+
+    settings.SettingsLoadingPanel.Text = "در حال دریافت اطلاعات";
+    settings.SettingsPager.Summary.Text = "صفحه‌ {0} از {1} - تعداد کل : {2}";
+    settings.SettingsPager.Summary.Position = PagerButtonPosition.Right;
+    settings.SettingsPager.AlwaysShowPager = false;
+    settings.SettingsPager.Mode = GridViewPagerMode.ShowPager;
+    settings.SettingsText.EmptyDataRow = "موردی یافت نشد";
+    settings.SettingsPager.PageSizeItemSettings.Visible = true;
+    settings.SettingsPager.PageSize = 25;
+    settings.SettingsPager.PageSizeItemSettings.Caption = "تعداد سطر :";
+    settings.SettingsPager.PageSizeItemSettings.Items = new string[] { "50", "100", "200", "500" };
+
+}).Bind(Model).GetHtml()

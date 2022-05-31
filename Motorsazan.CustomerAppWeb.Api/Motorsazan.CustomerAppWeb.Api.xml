@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Motorsazan.CustomerAppInterface.Api</name>
+    </assembly>
+    <members>
+        <member name="T:Motorsazan.CustomerAppInterface.Api.Utilities.QueryResultExtensions">
+            <summary>
+            Contains extension methods of QueryResult type
+            </summary>
+        </member>
+        <member name="M:Motorsazan.CustomerAppInterface.Api.Utilities.QueryResultExtensions.ToOutput``1(Motorsazan.CustomerAppInterface.Api.Models.Base.QueryResult)">
+            <summary>
+            Extension method that converts QueryResult to a TOutput
+            </summary>
+            <typeparam name="TOutput">Target class of conversion</typeparam>
+            <param name="queryResult">Source class of conversion</param>
+            <returns></returns>
+        </member>
+        <member name="T:Motorsazan.CustomerAppInterface.Api.Utilities.SqlParameterExtensions">
+            <summary>
+            Contains extension methods of related to SqlParameter
+            </summary>
+        </member>
+        <member name="M:Motorsazan.CustomerAppInterface.Api.Utilities.SqlParameterExtensions.ToSqlParameters``1(``0)">
+            <summary>
+            Convert input to list of SqlParameters
+            </summary>
+            <param name="input">Source of conversion</param>
+            <typeparam name="TInput">Must be a input class</typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Motorsazan.CMMS.Api.Controllers.ProductManagementController.AddProduct(Motorsazan.CustomerAppInterface.Shared.Models.Input.ProductManagement.InputAddProduct)">
+            <summary>
+               دریافت لیست گروه های محصولات
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Motorsazan.CMMS.Api.Controllers.ProductManagementController.GetProductCategoryList">
+            <summary>
+               دریافت لیست گروه های محصولات
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Motorsazan.CMMS.Api.Controllers.ProductManagementController.GetProductionListByProductCategoryID(Motorsazan.CustomerAppInterface.Shared.Models.Input.ProductManagement.InputGetProductionListByProductCategoryId)">
+            <summary>
+              دریافت لسیت محصولات بر اساس شناسه جدول گروه بندی محصولات
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Motorsazan.CMMS.Api.Controllers.ProductManagementController.AddImageToProduction(Motorsazan.CustomerAppInterface.Shared.Models.Input.ProductManagement.InputAddImageToProduction)">
+            <summary>
+                آپلود عکس محصول
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Motorsazan.CMMS.Api.Controllers.ProductManagementController.GetProductionAttachmentFileByProductionId(Motorsazan.CustomerAppInterface.Shared.Models.Input.ProductManagement.InputGetProductionAttachmentFileByProductionId)">
+            <summary>
+                آپلود عکس محصول
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,56 @@
+﻿<div class="filter-form">
+    <div class="row ">
+        
+        <div class="col-xs-12 col-md-10 " id="filterFormSpecialDateColumn">
+            <div class="row">
+                <div class="col-xs-12 col-md-6">
+                    <div class="app__form-item">
+                        <label class="app__form-label">
+                            از تاریخ
+                        </label>
+                        <input type="text" class="app__form-datepicker"
+                               id="filterFormStartDate"
+                               placeholder="تاریخ را انتخاب نمایید"
+                               data-mddatetimepicker="true"
+                               data-englishnumber="true"
+                               data-targetdateselector="#filterFormStartDate" />
+                        <div class="app__form-error app__hide"
+                             id="filterFormStartDateError">
+                            تاریخ شروع انتخاب نشده است
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                    <div class="app__form-item">
+                        <label class="app__form-label">
+                            تا تاریخ
+                        </label>
+                        <input type="text" class="app__form-datepicker"
+                               id="filterFormEndDate"
+                               placeholder="تاریخ را انتخاب نمایید"
+                               data-mddatetimepicker="true"
+                               data-englishnumber="true"
+                               data-targetdateselector="#filterFormEndDate" />
+                        <div class="app__form-error app__hide"
+                             id="filterFormEndDateError">
+                            تاریخ پایان انتخاب نشده است
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-5 col-md-2 filter-form__action-wrapper">
+            @Html.DevExpress().Button(settings =>
+            {
+                settings.Name = "filterFormSearchBtn";
+                settings.Text = "مشاهده";
+                settings.UseSubmitBehavior = false;
+                settings.EnableClientSideAPI = true;
+                settings.Styles.CssPostfix = "filter-form__btn";
+                settings.Width = Unit.Percentage(100);
+                settings.ClientSideEvents.Click =
+                    "motorsazanClient.notificationSlider.filterNotificationSlider";
+            }).GetHtml()
+        </div>
+    </div>
+</div>

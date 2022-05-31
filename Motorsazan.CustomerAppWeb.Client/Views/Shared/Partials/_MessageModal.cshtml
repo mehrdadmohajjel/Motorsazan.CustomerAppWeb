@@ -1,0 +1,37 @@
+﻿<div class="message-modal" id="messageModal" tabindex="0">
+    <div class="message-modal__form">
+        <div class="message-modal__header" id="messageModalTitle">
+            پیام سامانه
+        </div>
+        <button class="message-modal__close-btn"
+                id="messageModalCloseBtn"
+                title="بستن">
+            &times;
+        </button>
+        <img src="~/Client/Images/cancel.svg"
+             id="messageModalIcon"
+             class="message-modal__icon" />
+        <div class="message-modal__text" id="mesageModalContentWrapper">
+        </div>
+        <div class="message-modal__actions-wrapper">
+
+            @Html.DevExpress().Button(settings =>
+            {
+                settings.Name = "messageModalCancelActionBtn";
+                settings.UseSubmitBehavior = false;
+                settings.RenderMode = ButtonRenderMode.Outline;
+                settings.Text = "بستن";
+
+            }).GetHtml()
+
+            @Html.DevExpress().Button(settings =>
+            {
+                settings.Name = "messageModalConfirmActionBtn";
+                settings.UseSubmitBehavior = false;
+                settings.RenderMode = ButtonRenderMode.Button;
+                settings.Text = "تایید";
+            }).GetHtml()
+
+        </div>
+    </div>
+</div>

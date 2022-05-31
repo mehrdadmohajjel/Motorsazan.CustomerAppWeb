@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "مدیریت محصولات";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head
+{
+    <link href="~/DX.ashx?cssfile=~/Views/ProductManagement/Css/Index.min.css" rel="Stylesheet" />
+}
+@section scripts
+{
+    <script src="~/DX.ashx?jsfile=~/Views/ProductManagement/JS/Index.js"></script>
+    <script src="~/DX.ashx?jsfile=~/Client/Src/Js/Views/Shared/components/_Uploader.js"></script>
+    <script src="~/DX.ashx?jsfile=~/Client/Src/Js/Dependencies/Bootstrap/_Bootstrap.js"></script>
+}
+
+<div class="row">
+    <div class="col-xs-12 col-md-3">
+        <section class="app__section">
+            <div class="app__section__header">
+                ثبت  محصول جدید
+            </div>
+            <div class="app__section__body">
+                @{ Html.RenderPartial("~/Views/ProductManagement/AddForm/AddForm.cshtml"); }
+            </div>
+        </section>
+    </div>
+    <div class="col-xs-12 col-md-9">
+        <section class="app__section">
+            <div class="app__section__header">
+                لیست
+                @{ Html.RenderPartial("~/Views/Shared/Partials/_AppSectionSettings.cshtml"); }
+            </div>
+            <div class="app__section__body">
+                <form class="app__grid-wrapper" id="gridParent">
+                    @{Html.RenderAction("ProductManagementGrid", "ProductManagement");}
+                </form>
+            </div>
+        </section>
+    </div>
+</div>

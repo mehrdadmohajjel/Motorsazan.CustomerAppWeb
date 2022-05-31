@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://erp-server:2021/WebServices/App.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/MotorsazanAA" />
+  <xs:element name="CreateSession">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/MotorsazanAA" minOccurs="0" name="ws" nillable="true" type="q1:WebServiceInputCreateSession" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateSessionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/MotorsazanAA" minOccurs="0" name="CreateSessionResult" nillable="true" type="q2:WebServiceOutputCreateSession" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserInfoByJsonWebToken">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/MotorsazanAA" minOccurs="0" name="ws" nillable="true" type="q3:WebServiceInputGetEndUserInfoByJsonWebToken" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserInfoByJsonWebTokenResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/MotorsazanAA" minOccurs="0" name="GetUserInfoByJsonWebTokenResult" nillable="true" type="q4:WebServiceOutputGetEndUserInfoByJsonWebToken" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReportUserLoginInfoByJsonWebToken">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/MotorsazanAA" minOccurs="0" name="ws" nillable="true" type="q5:WebServiceInputReportEndUserLoginInfoByJsonWebToken" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReportUserLoginInfoByJsonWebTokenResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/MotorsazanAA" minOccurs="0" name="ReportUserLoginInfoByJsonWebTokenResult" nillable="true" type="q6:WebServiceOutputReportEndUserLoginInfoByJsonWebToken" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateSessionByJsonWebToken">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/MotorsazanAA" minOccurs="0" name="ws" nillable="true" type="q7:WebServiceInputValidateSessionByJsonWebToken" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateSessionByJsonWebTokenResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/MotorsazanAA" minOccurs="0" name="ValidateSessionByJsonWebTokenResult" nillable="true" type="q8:WebServiceOutputValidateSessionByJsonWebToken" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

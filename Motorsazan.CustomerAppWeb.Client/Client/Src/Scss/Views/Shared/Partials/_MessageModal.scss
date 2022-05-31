@@ -1,0 +1,106 @@
+﻿.message-modal {
+    align-items: center;
+    background: rgba(0,0,0,0.4);
+    display: flex;
+    height: 0;
+    justify-content: center;
+    opacity: 0;
+    overflow: hidden;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transition: opacity ease-in 0.2s;
+    width: 0;
+    z-index: -100000;
+
+    @include bem-m("active") {
+        bottom: 0;
+        height: 100%;
+        left: 0;
+        opacity: 1;
+        width: 100%;
+        z-index: $message-zindex;
+    }
+
+
+    $header-height: 42px;
+
+    @include bem-e("form") {
+        background: $color-white;
+        box-shadow: 0 0 4px rgba(0,0,0,.26);
+        margin: 0 auto;
+        max-width: em(600px);
+        padding: 0;
+        padding-top: em($header-height);
+        position: relative;
+        text-align: center;
+        width: 90%;
+    }
+
+    @include bem-e("header") {
+        $header-font-size: 12px;
+
+        background: $color-primary;
+        color: $color-white;
+        font-size: em($header-font-size);
+        font-weight: bold;
+        height: em($header-height, $header-font-size);
+        line-height: em($header-height, $header-font-size);
+        padding: 0 em($padding-default, $header-font-size);
+        position: absolute;
+        right: 0;
+        text-align: center;
+        top: 0;
+        width: 100%;
+    }
+
+    @include bem-e("close-btn") {
+        $btn-font-size: 16px;
+        $btn-size: $header-height - 16;
+
+        background-color: $color-text;
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        color: $color-white;
+        cursor: pointer;
+        font-size: em($btn-font-size);
+        font-weight: bold;
+        height: em($btn-size, $btn-font-size);
+        line-height: em($btn-size, $btn-font-size);
+        outline: none;
+        padding: 0;
+        padding-top: 1px;
+        position: absolute;
+        right: 7px;
+        top: 8px;
+        text-align: center;
+        width: em($btn-size, $btn-font-size);
+
+        &:hover {
+            background-color: $color-danger--dark;
+        }
+    }
+
+    @include bem-e("icon") {
+        display: block;
+        margin: 0 auto;
+        margin-top: em($padding-default);
+        margin-bottom: em($padding-default / 2);
+        width: em(50px);
+    }
+
+    @include bem-e("text") {
+        color: $color-text;
+        font-size: em(14px);
+        line-height: 1.8;
+        padding: 0 em($padding-default, 14px);
+        text-align: center;
+    }
+
+    @include bem-e("actions-wrapper") {
+        background: $color-white--dark;
+        border-top: 1px solid $color-border;
+        margin-top: em($padding-default);
+        padding: em($padding-default / 1.5) em($padding-default);
+        text-align: left;
+    }
+}

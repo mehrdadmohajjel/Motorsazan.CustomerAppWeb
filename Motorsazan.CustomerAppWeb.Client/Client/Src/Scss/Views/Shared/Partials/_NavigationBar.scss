@@ -1,0 +1,322 @@
+﻿.nav {
+    background-color: $color-white;
+    box-shadow: 0 0 5px rgba(0,0,0,0.26);
+    height: em($navigation-height);
+    line-height: em($navigation-height);
+    position: fixed;
+    padding: 0 em($padding-default);
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: $navigations-zindex + 1;
+
+    @include mq("sd") {
+        padding-right: em($shortcut-bar-min-width + $padding-default);
+    }
+
+
+    $nav-items-zindex: $navigations-zindex+ 100;
+
+    @include bem-e("show-menu-btn") {
+        background: transparent;
+        border: none;
+        display: inline-block;
+        height: em($form-item-height);
+        margin-top: em(-2px);
+        outline: none;
+        padding: em(12px) em(6px);
+        vertical-align: top;
+        width: em($form-item-height);
+
+        @include bem-e("line") {
+            background: $color-text;
+            display: block;
+            height: 2px;
+            margin: 6px auto;
+            width: 100%;
+        }
+
+        @include mq("sd") {
+            display: none;
+        }
+    }
+
+    @include bem-e("overlay") {
+        background-color: rgba(0,0,0,0.6);
+        height: 0;
+        position: fixed;
+        right: 0;
+        top: 0;
+        transition: opacity ease-in-out 0.2s;
+        width: 0;
+        z-index: -1000;
+
+        @include bem-m("active") {
+            bottom: 0;
+            height: 100%;
+            left: 0;
+            opacity: 1;
+            width: 100%;
+            z-index: $nav-items-zindex + 1;
+        }
+
+        @include mq("sd") {
+            display: none;
+        }
+    }
+
+    @include bem-e("drawer") {
+        background: $color-white;
+        bottom: 0;
+        box-shadow: -2px 0 4px rgba(0,0,0,0.26);
+        max-width: em(320px);
+        opacity: 0;
+        overflow-y: auto;
+        position: fixed;
+        right: 0;
+        top: 0;
+        transform: translateX(1000%);
+        transition: opacity linear 0.2s, transform linear 0.25s;
+        width: 75%;
+        z-index: -1000;
+
+        @include bem-m("active") {
+            opacity: 1;
+            transform: translateX(0);
+            z-index: $nav-items-zindex + 2;
+        }
+
+        @include bem-e("logo-wrapper") {
+            background-color: $color-primary;
+            color: $color-white;
+            display: block;
+            font-weight: bold;
+            line-height: 1.6;
+            margin-bottom: em($padding-default*2);
+            padding: em(25px) 0;
+            text-align: center;
+
+            @include mq("sd") {
+                display: none;
+            }
+        }
+
+        @include bem-e("logo") {
+            display: block;
+            margin: 0 auto em($padding-default) auto;
+            width: em(90px);
+        }
+
+        @include mq("sd") {
+            background: transparent;
+            bottom: unset;
+            box-shadow: none;
+            max-width: unset;
+            opacity: 1;
+            overflow: visible;
+            position: relative;
+            right: unset;
+            top: unset;
+            transform: translateX(0);
+            width: auto;
+            z-index: unset;
+        }
+    }
+
+
+    $nav-item-font-size: 14px;
+
+    @include bem-e("item") {
+        border-bottom: 1px solid $color-white--dark;
+        color: $color-text;
+        cursor: pointer;
+        display: block;
+        font-size: em($nav-item-font-size);
+        height: em($form-item-height, $nav-item-font-size);
+        line-height: em($form-item-height, $nav-item-font-size);
+        overflow: hidden;
+        padding: 0 em($padding-default, $nav-item-font-size);
+        position: relative;
+        text-decoration: none;
+
+        @include mq("sd") {
+            border-bottom: none;
+            display: inline-block;
+            height: em($navigation-height, $nav-item-font-size);
+            line-height: em($navigation-height, $nav-item-font-size);
+            padding: 0 em($padding-default, $nav-item-font-size);
+            vertical-align: middle;
+
+            &:hover {
+                background: $color-primary;
+                color: $color-white;
+            }
+        }
+
+        @include bem-m("has-submenu") {
+            &:after {
+                border-left: em(4px, $nav-item-font-size) solid transparent;
+                border-right: em(4px, $nav-item-font-size) solid transparent;
+                border-top: em(4px, $nav-item-font-size) solid $color-text;
+                content: "";
+                display: block;
+                height: 0;
+                left: em($padding-default, $nav-item-font-size);
+                position: absolute;
+                top: em(21px, $nav-item-font-size);
+                width: 0;
+            }
+
+            @include mq("sd") {
+                padding: 0 em($padding-default, $nav-item-font-size) 0 em($padding-default*2, $nav-item-font-size);
+
+                &:hover {
+                    overflow: visible;
+
+                    .nav__submenu {
+                        display: block;
+                        opacity: 1;
+                    }
+
+                    &:after {
+                        transform: rotate(180deg);
+                        border-top-color: $color-white;
+                    }
+                }
+            }
+        }
+
+        @include bem-m("expanded") {
+            background-color: $color-white--dark;
+            height: auto;
+            overflow: visible;
+
+            .nav__submenu {
+                border-top: 2px solid $color-primary;
+            }
+
+            .nav__submenu {
+                border-top: 2px solid $color-primary;
+            }
+
+            &:after {
+                transform: rotate(180deg);
+            }
+        }
+
+
+        @include bem-m("has-second-level-submenu") {
+            display: block;
+
+
+            &::before {
+                border-left: em(5px, $nav-item-font-size) solid transparent;
+                border-right: em(5px, $nav-item-font-size) solid transparent;
+                border-top: em(5px, $nav-item-font-size) solid $color-text;
+                content: "";
+                display: inline-block;
+                height: 0;
+                left: em($padding-default, $nav-item-font-size);
+                position: relative;
+                top: 0;
+                right: 100%;
+
+
+                @include mq("sd") {
+                    transform: rotate(90deg);
+                }
+            }
+
+            @include bem-m("expanded") {
+                &::before {
+                    transform: rotate(180deg);
+                }
+            }
+
+            &:hover .nav {
+                @include mq("sd") {
+
+                    @include bem-e("second-level-submenu") {
+                        display: block;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+
+    @include bem-e("submenu") {
+        padding: 0 em($padding-default, $nav-item-font-size);
+        position: relative;
+
+        @include mq("sd") {
+            background: $color-white;
+            box-shadow: 0 0 4px rgba(0,0,0,0.26);
+            display: none;
+            opacity: 0;
+            padding: em($padding-default / 2, $nav-item-font-size) 0;
+            position: absolute;
+            transition: opacity linear 0.2s;
+            right: 0;
+            top: em($navigation-height);
+            width: em(380px);
+        }
+    }
+
+    @include bem-e("link") {
+        border-bottom: 1px solid $color-text--light;
+        color: $color-text;
+        display: block;
+        font-size: em($nav-item-font-size);
+        height: em($form-item-height, $nav-item-font-size);
+        line-height: em($form-item-height, $nav-item-font-size);
+        text-decoration: none;
+        white-space: nowrap;
+
+        @include mq("sd") {
+            border-bottom: none;
+            padding: 0 em($padding-default, $nav-item-font-size);
+
+            &:hover {
+                background-color: $color-primary;
+                color: $color-white;
+            }
+        }
+    }
+
+    @include bem-e("second-level-submenu") {
+        &:not([class*="--expanded"]) {
+            display: none;
+            position: absolute;
+            opacity: 0;
+            width: 90%;
+            position: relative;
+        }
+
+        @include mq("sd") {
+            background: $color-white;
+            box-shadow: 0 0 4px rgba(0,0,0,0.26);
+            display: none;
+            opacity: 0;
+            padding: em($padding-default / 2, $nav-item-font-size) 0;
+            position: relative;
+            transition: opacity linear 0.2s;
+            width: em(380px);
+            left: -104.5%;
+            top: -100%;
+        }
+
+        @include bem-m("expanded") {
+            height: auto;
+
+            .nav__link:first-of-type {
+                border-top: 2px solid $color-primary;
+            }
+
+            .nav__link {
+                padding-right: 5%;
+                margin-right: 5%;
+            }
+        }
+    }
+}

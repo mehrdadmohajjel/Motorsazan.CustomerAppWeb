@@ -1,0 +1,212 @@
+﻿    <div class="row">
+    <div class="col-xs-12 col-md-12 col-lg-12">
+        <div class="app__form-item">
+            <label class="app__form-label">
+                دسته بندی محصول
+            </label>
+            <div id="addFormProductCategoryComboParent">
+                @{
+                    Html.RenderAction("AddFormProductCategoryCombo", "ProductManagement");
+
+                }
+            </div>
+            <div class="app__form-error app__hide" id="addFormProductCategoryComboError">
+                دسته بندی محصول انتخاب نشده است
+            </div>
+
+        </div>
+    </div>
+    <div class="col-xs-12 col-md-12">
+        <div class="app__form-item">
+            <label class="app__form-label">
+                نوع موتور
+            </label>
+            <div id="addFormEngineTypeParent">
+                @Html.DevExpress().TextBox(settings =>
+                {
+                    settings.Name = "addFormEngineTypeTextBox";
+                    settings.Properties.NullText = "";
+                    settings.ClientEnabled = false;
+                    settings.Properties.ClientSideEvents.ValueChanged =
+                        "motorsazanClient.productManagement.handleAddFormEngineTypeTextBoxValueChanged";
+
+                }).GetHtml()
+            </div>
+            <div class="app__form-error app__hide" id="addFormEngineTypeError">
+                نوع موتور انتخاب نشده است
+            </div>
+
+        </div>
+    </div>
+    <div class="col-xs-12 col-md-6 col-lg-6">
+        <div class="app__form-item">
+            <label class="app__form-label">
+                تعداد سیلندر
+            </label>
+            <div id="addFormNumberOfCylinderParent">
+                @Html.DevExpress().SpinEdit(settings =>
+                {
+                    settings.Name = "addFormNumberOfCylinder";
+                    settings.Properties.MinValue = 0;
+                    settings.Properties.MaxValue = 20;
+                    settings.Properties.ShowOutOfRangeWarning = false;
+                    settings.ClientEnabled = false;
+                    settings.Properties.ClientSideEvents.ValueChanged =
+                        "motorsazanClient.productManagement.handleAddFormNumberOfCylinderValueChanged";
+                }).GetHtml()
+            </div>
+            <div class="app__form-error app__hide" id="addFormNumberOfCylinderError">
+                تعداد سیلندر انتخاب نشده است
+            </div>
+
+        </div>
+    </div>
+    <div class="col-xs-12 col-md-6 col-lg-6">
+        <div class="app__form-item">
+            <label class="app__form-label">
+                وزن تقریبی
+            </label>
+            <div id="addFormApproximateWeightParent">
+                @Html.DevExpress().TextBox(settings =>
+                {
+                    settings.Name = "addFormApproximateWeightTextBox";
+                    settings.ClientEnabled = false;
+                    settings.Properties.ClientSideEvents.TextChanged =
+                        "motorsazanClient.productManagement.handleAddFormApproximateWeightTextBoxValueChanged";
+
+                }).GetHtml()
+            </div>
+            <div class="app__form-error app__hide" id="addFormApproximateWeightError">
+                وزن تقریبی انتخاب نشده است
+            </div>
+
+        </div>
+    </div>
+
+    <div class="col-xs-12 col-md-6 col-lg-6">
+        <div class="app__form-item">
+            <label class="app__form-label">
+                حداکثر توان
+            </label>
+            <div id="addFormMaxPowerParent">
+                @Html.DevExpress().TextBox(settings =>
+                {
+                    settings.Name = "addFormMaxPowerTextBox";
+                    settings.ClientEnabled = false;
+                    settings.Properties.ClientSideEvents.TextChanged =
+                        "motorsazanClient.productManagement.handleAddFormMaxPowerTextBoxChanged";
+                }).GetHtml()
+            </div>
+            <div class="app__form-error app__hide" id="addFormMaxPowerError">
+                حداکثر توان انتخاب نشده است
+            </div>
+
+        </div>
+    </div>
+
+    <div class="col-xs-12 col-md-6 col-lg-6">
+        <div class="app__form-item">
+            <label class="app__form-label">
+                حداکثر گشتاور
+            </label>
+            <div id="addFormMaxTorqueParent">
+                @Html.DevExpress().TextBox(settings =>
+                {
+                    settings.Name = "addFormMaxTorqueTextBox";
+                    settings.ClientEnabled = false;
+                    settings.Properties.ClientSideEvents.TextChanged =
+                        "motorsazanClient.productManagement.handleAddFormMaxTorqueTextBoxChanged";
+                }).GetHtml()
+            </div>
+            <div class="app__form-error app__hide" id="addFormMaxTorqueError">
+                مقدار انتخاب نشده است
+            </div>
+
+        </div>
+    </div>
+
+    <div class="col-xs-12 col-md-4 col-lg-4">
+        <div class="app__form-item">
+            <label class="app__form-label">
+                طول
+            </label>
+            <div id="addFormLengthParent">
+                @Html.DevExpress().TextBox(settings =>
+                {
+                    settings.Name = "addFormLengthTextBox";
+                    settings.ClientEnabled = false;
+                    settings.Properties.ClientSideEvents.TextChanged =
+                        "motorsazanClient.productManagement.handleAddFormLengthTextBoxChanged";
+                }).GetHtml()
+            </div>
+            <div class="app__form-error app__hide" id="addFormLengthError">
+                طول انتخاب نشده است
+            </div>
+
+        </div>
+    </div>
+    <div class="col-xs-12 col-md-4 col-lg-4">
+        <div class="app__form-item">
+            <label class="app__form-label">
+                عرض
+            </label>
+            <div id="addFormWidthParent">
+                @Html.DevExpress().TextBox(settings =>
+                {
+                    settings.Name = "addFormWidthTextBox";
+                    settings.ClientEnabled = false;
+                    settings.Properties.ClientSideEvents.TextChanged =
+                        "motorsazanClient.productManagement.handleAddFormWidthTextBoxChanged";
+                }).GetHtml()
+            </div>
+            <div class="app__form-error app__hide" id="addFormWidthError">
+                عرض انتخاب نشده است
+            </div>
+
+        </div>
+    </div>
+    <div class="col-xs-12 col-md-4 col-lg-4">
+        <div class="app__form-item">
+            <label class="app__form-label">
+                ارتفاع
+            </label>
+            <div id="addFormHeightParent">
+                @Html.DevExpress().TextBox(settings =>
+                {
+                    settings.Name = "addFormHeightTextBox";
+                    settings.ClientEnabled = false;
+                    settings.Properties.ClientSideEvents.TextChanged =
+                        "motorsazanClient.productManagement.handleAddFormHeightTextBoxChanged";
+                }).GetHtml()
+            </div>
+            <div class="app__form-error app__hide" id="addFormHeightError">
+                ارتفاع انتخاب نشده است
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <div class="col-xs-12 col-md-12 col-lg-12 filter-form__action-wrapper">
+        @Html.DevExpress().Button(settings =>
+        {
+            settings.Name = "addPeopleSaveBtn";
+            settings.Text = "ثبت";
+            settings.UseSubmitBehavior = false;
+            settings.EnableClientSideAPI = true;
+            settings.Styles.CssPostfix = "add-form__btn";
+            settings.Width = Unit.Percentage(100);
+            settings.ClientSideEvents.Click =
+                "motorsazanClient.productManagement.handleAddProduct";
+        }).GetHtml()
+    </div>
+
+</div>

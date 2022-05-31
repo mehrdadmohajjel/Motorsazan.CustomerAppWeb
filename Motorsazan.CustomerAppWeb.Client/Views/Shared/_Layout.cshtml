@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0">
+    <title>@ViewBag.Title | شرکت موتورسازان تراکتورسازی</title>
+    <link rel="icon" href="~/Favicon.png" />
+    @{Html.RenderPartial("~/Views/Shared/Partials/_DevexpressClient.cshtml");}
+    @{Html.RenderPartial("~/Views/Shared/Partials/_CommonClientResources.cshtml");}
+    @RenderSection("head", required: false)
+    @RenderSection("scripts", required: false)
+</head>
+<body>
+    <div id="navigationBarParent">
+        @{Html.RenderAction("NavigationBar", "Base");}
+    </div>
+    <div id="shortcutBarParent">
+        @{Html.RenderAction("ShortcutBar", "Base");}
+    </div>
+    <div class="app__pages-wrapper">
+        <h1 class="app__page-title">
+            @ViewBag.Title
+        </h1>
+        @RenderBody()
+    </div>
+    @{Html.RenderPartial("~/Views/Shared/Partials/_LoadingModal.cshtml");}
+    @{Html.RenderPartial("~/Views/Shared/Partials/_LoginModal.cshtml");}
+    @{Html.RenderPartial("~/Views/Shared/Partials/_MessageModal.cshtml");}
+    <div id="contentModalsWrapper"></div>
+</body>
+</html>
+
+ 

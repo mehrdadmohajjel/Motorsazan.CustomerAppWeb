@@ -1,0 +1,227 @@
+﻿@using System.Drawing
+@using DevExpress.XtraExport.Helpers
+@model Motorsazan.CustomerAppWeb.Shared.Models.Output.ProductManagement.OutputGetProductionListByProductCategoryId[]
+
+@Html.DevExpress().GridView(settings =>
+{
+    settings.Name = "grid";
+    settings.CallbackRouteValues = new { Controller = "ProductManagement", Action = "ProductManagementGrid" };
+    settings.ClientSideEvents.BeginCallback =
+        "motorsazanClient.productManagement.handleProductManagementGridCallbackUrl";
+
+    settings.Width = Unit.Percentage(100);
+
+    settings.Settings.ShowFilterRow = false;
+    settings.Settings.ShowFilterRowMenu = false;
+    settings.SettingsBehavior.AllowFocusedRow = true;
+    settings.SettingsBehavior.AllowSelectByRowClick = true;
+    settings.SettingsBehavior.AllowSelectSingleRowOnly = true;
+    settings.SettingsDetail.AllowOnlyOneMasterRowExpanded = true;
+
+    settings.EnableRowsCache = true;
+
+    settings.KeyFieldName = "ProductionId";
+    settings.Columns.Add(column =>
+    {
+        column.FieldName = "RowIndex";
+        column.Caption = "ردیف";
+        column.Width = Unit.Pixel(60);
+        column.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+        settings.CustomUnboundColumnData = (s, e) =>
+        {
+            if (e.Column.FieldName == "RowIndex")
+                e.Value = e.ListSourceRowIndex + 1;
+        };
+    });
+
+    settings.Columns.Add(column =>
+    {
+        column.FieldName = "ProductionCategoryShowName";
+        column.Caption = "نوع محصول";
+    });
+    settings.Columns.Add(column =>
+    {
+        column.FieldName = "EngineType";
+        column.Caption = "نوع موتور";
+    });
+    settings.Columns.Add(column =>
+    {
+
+        column.FieldName = "ImageName";
+        column.Visible = false;
+    });
+    settings.Columns.Add(column =>
+    {
+
+        column.FieldName = "CatalogName";
+        column.Visible = false;
+    });
+    settings.Columns.AddBand(band =>
+    {
+        band.Caption = "مشخصات ";
+        band.HeaderStyle.VerticalAlign = VerticalAlign.Middle;
+        band.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
+        band.Columns.Add(column =>
+        {
+            column.FieldName = "NumberOfCylinder";
+            column.HeaderStyle.VerticalAlign = VerticalAlign.Middle;
+            column.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
+            column.CellStyle.VerticalAlign = VerticalAlign.Middle;
+            column.CellStyle.HorizontalAlign = HorizontalAlign.Center;
+            column.Caption = "تعداد سیلندر";
+            column.HeaderStyle.Wrap = DefaultBoolean.True;
+
+        });
+
+        band.Columns.Add(column =>
+        {
+            column.FieldName = "ApproximateWeight";
+            column.Caption = "وزن تقریبی";
+            column.HeaderStyle.VerticalAlign = VerticalAlign.Middle;
+            column.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
+            column.CellStyle.VerticalAlign = VerticalAlign.Middle;
+            column.CellStyle.HorizontalAlign = HorizontalAlign.Center;
+            column.CellStyle.Wrap = DefaultBoolean.True;
+            column.HeaderStyle.Wrap = DefaultBoolean.True;
+        });
+
+        band.Columns.Add(column =>
+        {
+            column.FieldName = "MaxTorque";
+            column.HeaderStyle.VerticalAlign = VerticalAlign.Middle;
+            column.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
+            column.CellStyle.VerticalAlign = VerticalAlign.Middle;
+            column.CellStyle.HorizontalAlign = HorizontalAlign.Center;
+            column.Caption = "حداکثر گشتاور";
+            column.HeaderStyle.Wrap = DefaultBoolean.True;
+        });
+
+        band.Columns.Add(column =>
+        {
+            column.FieldName = "MaxPower";
+            column.HeaderStyle.VerticalAlign = VerticalAlign.Middle;
+            column.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
+            column.CellStyle.VerticalAlign = VerticalAlign.Middle;
+            column.CellStyle.HorizontalAlign = HorizontalAlign.Center;
+            column.Caption = "حداکثر توان";
+            column.HeaderStyle.Wrap = DefaultBoolean.True;
+        });
+
+    });
+
+    settings.Columns.AddBand(band =>
+    {
+        band.Caption = "اندازه محصول ";
+        band.HeaderStyle.VerticalAlign = VerticalAlign.Middle;
+        band.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
+
+        band.Columns.Add(column =>
+        {
+            column.FieldName = "Length";
+            column.Caption = "طول";
+            column.HeaderStyle.VerticalAlign = VerticalAlign.Middle;
+            column.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
+            column.CellStyle.VerticalAlign = VerticalAlign.Middle;
+            column.CellStyle.HorizontalAlign = HorizontalAlign.Center;
+        });
+        band.Columns.Add(column =>
+        {
+            column.FieldName = "Width";
+            column.Caption = "عرض";
+            column.CellStyle.Wrap = DefaultBoolean.True;
+            column.HeaderStyle.VerticalAlign = VerticalAlign.Middle;
+            column.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
+            column.CellStyle.VerticalAlign = VerticalAlign.Middle;
+            column.CellStyle.HorizontalAlign = HorizontalAlign.Center;
+        });
+        band.Columns.Add(column =>
+        {
+            column.FieldName = "Height";
+            column.Caption = "ارتفاع";
+            column.HeaderStyle.VerticalAlign = VerticalAlign.Middle;
+            column.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
+            column.CellStyle.VerticalAlign = VerticalAlign.Middle;
+            column.CellStyle.HorizontalAlign = HorizontalAlign.Center;
+        });
+
+
+    });
+    settings.CustomButtonInitialize = (sender, e) =>
+    {
+        var grid = sender as MVCxGridView;
+        var imageName = (string)grid.GetRowValues(e.VisibleIndex, "ImageName");
+        if (string.IsNullOrEmpty((string)grid.GetRowValues(e.VisibleIndex, "ImageName")))
+        {
+            if (e.ButtonID == "getUploadedMachineDocumentMemberBtn")
+            {
+                e.Enabled = false;
+            }
+
+        }
+
+        if (string.IsNullOrEmpty((string)grid.GetRowValues(e.VisibleIndex, "CatalogName")))
+        {
+            if (e.ButtonID == "getUploadedcatalogCustomButton")
+            {
+                e.Enabled = false;
+            }
+
+        }
+    };
+
+    settings.CommandColumn.Visible = true;
+    settings.CommandColumn.ShowDeleteButton = false;
+    settings.CommandColumn.ShowEditButton = false;
+    settings.CommandColumn.ShowNewButton = false;
+    settings.CommandColumn.ShowNewButtonInHeader = false;
+    settings.CommandColumn.Caption = "عملیات";
+    settings.CommandColumn.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
+
+    settings.CommandColumn.ButtonRenderMode = GridCommandButtonRenderMode.Button;
+    settings.CommandColumn.VisibleIndex = 1000;
+    settings.ClientSideEvents.CustomButtonClick = "motorsazanClient.productManagement.handleGridCustomBtnClick";
+
+    var addPeopleButton = new GridViewCommandColumnCustomButton() { ID = "addProductImageBtn", Text = "افزودن تصویر" };
+    addPeopleButton.Styles.Style.CssClass = "app__form-grid-mini-btn app__form-grid-mini-btn--info";
+    settings.CommandColumn.CustomButtons.Add(addPeopleButton);
+
+    var getUploadedCustomButton = new GridViewCommandColumnCustomButton() { ID = "getUploadedMachineDocumentMemberBtn", Text = "دریافت تصویر" };
+    getUploadedCustomButton.Styles.Style.CssClass = "app__form-grid-mini-btn";
+    getUploadedCustomButton.Styles.Style.BackColor = Color.Orange;
+    settings.CommandColumn.CustomButtons.Add(getUploadedCustomButton);
+
+
+    var showPeopleButton = new GridViewCommandColumnCustomButton() { ID = "addProductCatalogBtn", Text = " افزودن کاتالوگ" };
+    showPeopleButton.Styles.Style.CssClass = "app__form-grid-mini-btn app__form-grid-mini-btn--info";
+    settings.CommandColumn.CustomButtons.Add(showPeopleButton);
+
+    var getUploadedcatalogCustomButton = new GridViewCommandColumnCustomButton() { ID = "getUploadedcatalogCustomButton", Text = "دریافت کاتالوگ" };
+    getUploadedcatalogCustomButton.Styles.Style.CssClass = "app__form-grid-mini-btn";
+    getUploadedcatalogCustomButton.Styles.Style.BackColor = Color.Orange;
+    settings.CommandColumn.CustomButtons.Add(getUploadedcatalogCustomButton);
+
+    var removeproductCustomBtn = new GridViewCommandColumnCustomButton() { ID = "removeProductBTN", Text = "حذف محصول" };
+    removeproductCustomBtn.Styles.Style.CssClass = "app__form-grid-mini-btn";
+    removeproductCustomBtn.Styles.Style.BackColor = Color.Red;
+    settings.CommandColumn.CustomButtons.Add(removeproductCustomBtn);
+
+
+    settings.SettingsExport.EnableClientSideExportAPI = true;
+    settings.SettingsExport.ExcelExportMode = DevExpress.Export.ExportType.WYSIWYG;
+    settings.Toolbars.Add(t =>
+    {
+        t.Items.Add(GridViewToolbarCommand.ExportToXlsx).Text = "خروجی اکسل";
+    });
+
+    settings.SettingsLoadingPanel.Text = "در حال دریافت اطلاعات";
+    settings.SettingsPager.Summary.Text = "صفحه‌ {0} از {1} - تعداد کل : {2}";
+    settings.SettingsPager.Summary.Position = PagerButtonPosition.Right;
+    settings.SettingsPager.AlwaysShowPager = false;
+    settings.SettingsPager.Mode = GridViewPagerMode.ShowPager;
+    settings.SettingsText.EmptyDataRow = "موردی یافت نشد";
+    settings.SettingsPager.PageSizeItemSettings.Visible = true;
+    settings.SettingsPager.PageSize = 25;
+    settings.SettingsPager.PageSizeItemSettings.Caption = "تعداد سطر :";
+    settings.SettingsPager.PageSizeItemSettings.Items = new string[] { "50", "100", "200", "500" };
+
+}).Bind(Model).GetHtml()

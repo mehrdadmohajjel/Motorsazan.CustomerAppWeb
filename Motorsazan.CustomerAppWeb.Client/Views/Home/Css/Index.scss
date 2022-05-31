@@ -1,0 +1,63 @@
+﻿@import "../../../Client/Src/Scss/Utilities/Index";
+
+.home {
+    margin: 0 auto;
+    max-width: 960px;
+    text-align: center;
+
+
+    &__link {
+        border-radius: 4px;
+        color: $color-white;
+        display: block;
+        font-size: 14px;
+        margin-bottom: 15px;
+        padding: 16px;
+        text-decoration: none;
+        width: 100%;
+
+        &__icon {
+            display: block;
+            margin: 0 auto;
+            margin-bottom: 15px;
+            max-width: 60px;
+        }
+
+        &:hover {
+            color: $color-white;
+            text-decoration: none;
+        }
+
+        &--success {
+            background: $color-success;
+
+            &:hover {
+                background: $color-success--dark;
+            }
+        }
+
+        &--info {
+            background: $color-info;
+
+            &:hover {
+                background: $color-info--dark;
+            }
+        }
+
+        &--danger {
+            background: $color-danger;
+
+            &:hover {
+                background: $color-danger--dark;
+            }
+        }
+
+        &--warning {
+            background: $color-warning;
+
+            &:hover {
+                background: $color-warning--dark;
+            }
+        }
+    }
+}
